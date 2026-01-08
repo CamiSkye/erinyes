@@ -1,7 +1,12 @@
 {
-      "name": "Sensibilisation VSS Website",
+      "name": "sensibilisation-vss-website",
       "version": "0.1.0",
       "private": true,
+      "engines": {
+            "node": ">=18",
+            "npm": ">=9"
+      },
+
       "dependencies": {
             "@radix-ui/react-accordion": "^1.2.3",
             "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -56,10 +61,12 @@
             "autoprefixer": "^10.4.23",
             "postcss": "^8.5.6",
             "tailwindcss": "^4.1.18",
-            "vite": "^6.3.5"
+            "vite": "^6.3.5",
+            "vite-plugin-static-copy": "^3.1.4"
       },
+      
       "scripts": {
             "dev": "vite",
-            "build": "npx vite build"
+            "build": "vite build"
       }
 }
