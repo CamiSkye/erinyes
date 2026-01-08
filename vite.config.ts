@@ -9,7 +9,7 @@
     react(),
     viteStaticCopy({
       targets: [
-        { src: 'quiz/*', 
+        { src: 'quiz', 
           dest: '' } 
       ]
     })
