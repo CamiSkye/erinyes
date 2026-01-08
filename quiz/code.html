@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="fr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Sensibilisation Violences Sexuelles</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      margin: 40px auto;
+    }
+
+    .warning-banner {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+
+    .warning-banner p {
+      margin: 0;
+      color: #856404;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #2d3748;
+      font-size: 32px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .intro {
+      text-align: center;
+      color: #4a5568;
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .question-container {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .question-number {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .option {
+      background: #f7fafc;
+      border: 2px solid #e2e8f0;
+      padding: 18px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      color: #2d3748;
+    }
+
+    .option:hover {
+      background: #edf2f7;
+      border-color: #667eea;
+      transform: translateX(5px);
+    }
+
+    .option.selected {
+      background: #667eea;
+      color: white;
+      border-color: #667eea;
+    }
+
+    .option.correct {
+      background: #48bb78;
+      color: white;
+      border-color: #48bb78;
+    }
+
+    .option.incorrect {
+      background: #f56565;
+      color: white;
+      border-color: #f56565;
+    }
+
+    .explanation {
+      display: none;
+      background: #e6fffa;
+      border-left: 4px solid #38b2ac;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      animation: slideDown 0.4s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
+    }
+
+    .explanation h3 {
+      color: #234e52;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .explanation p {
+      color: #2c7a7b;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 30px auto 0;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .results {
+      display: none;
+      text-align: center;
+    }
+
+    .score {
+      font-size: 48px;
+      font-weight: bold;
+      color: #667eea;
+      margin: 20px 0;
+    }
+
+    .stats-section {
+      background: #f7fafc;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .stats-section h2 {
+      color: #2d3748;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .stat-item {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+
+    .stat-item h3 {
+      color: #667eea;
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+
+    .stat-item p {
+      color: #4a5568;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .sources {
+      background: #fff5f5;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      border-left: 4px solid #f56565;
+    }
+
+    .sources h3 {
+      color: #c53030;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .sources ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #742a2a;
+    }
+
+    .sources li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .warning-places {
+      background: #fffaf0;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      border-left: 4px solid #ed8936;
+    }
+
+    .warning-places h3 {
+      color: #c05621;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .warning-places ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #7c2d12;
+    }
+
+    .warning-places li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .help-resources {
+      background: #e6fffa;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+      border-left: 4px solid #38b2ac;
+    }
+
+    .help-resources h3 {
+      color: #234e52;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .help-resources p {
+      color: #2c7a7b;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .help-resources strong {
+      color: #234e52;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div id="welcome-screen">
+    <div class="warning-banner">
+     <p id="warning-text">⚠️ Ce quiz aborde des sujets sensibles liés aux Violences Sexuelles et Sexistes. Si vous vous sentez mal à l'aise, n'hésitez pas à faire une pause.</p>
+    </div>
+    <h1 id="main-title">Quiz de Sensibilisation aux Violences Sexuelles et Sexistes</h1>
+    <p class="intro" id="intro-paragraph">Ce quiz éducatif vise à sensibiliser sur les réalités des violences sexuelles et sexistes dans le monde du travail et les espaces publics et privés. Testez vos connaissances et découvrez des statistiques importantes.</p><button class="btn" id="start-btn">Commencer le Quiz</button>
+   </div>
+   <div id="quiz-section">
+    <div class="progress-bar">
+     <div class="progress-fill" id="progress"></div>
+    </div>
+    <div class="question-container" id="question-container">
+     <div class="question-header">
+      <div class="question-number" id="question-number"></div>
+      <div class="question-text" id="question-text"></div>
+     </div>
+     <div class="options" id="options"></div>
+     <div class="explanation" id="explanation">
+      <h3>💡 Le saviez-vous ?</h3>
+      <p id="explanation-text"></p>
+     </div><button class="btn" id="next-btn" style="display: none;">Question Suivante</button>
+    </div>
+   </div>
+   <div class="results" id="results">
+    <h1>Quiz Terminé !</h1>
+    <div class="score" id="score"></div>
+    <p style="font-size: 18px; color: #4a5568; margin-bottom: 30px;">Merci d'avoir participé à ce quiz de sensibilisation.</p>
+    <div class="stats-section">
+     <h2>📊 Statistiques Clés sur les Violences Sexuelles</h2>
+     <div class="stat-item">
+      <h3>Dans le monde du travail</h3>
+      <p>En France, 1 femme sur 3 a été victime de harcèlement sexuel au travail au cours de sa carrière. Seulement 5% des victimes portent plainte par peur des représailles professionnelles.</p>
+     </div>
+     <div class="stat-item">
+      <h3>Dans les espaces publics</h3>
+      <p>81% des femmes ont été victimes de harcèlement sexuel dans l'espace public en France. Les transports en commun sont particulièrement concernés avec 87% des utilisatrices ayant subi au moins une forme de harcèlement.</p>
+     </div>
+     <div class="stat-item">
+      <h3>Les hommes aussi sont concernés</h3>
+      <p>1 homme sur 6 a été victime de violences sexuelles au cours de sa vie. Les hommes représentent environ 10% des victimes de viol et d'agressions sexuelles, mais sont encore moins enclins à en parler en raison des stéréotypes de genre.</p>
+     </div>
+     <div class="stat-item">
+      <h3>Dans la sphère privée</h3>
+      <p>94 000 femmes sont victimes de viol ou de tentative de viol chaque année en France. Dans 91% des cas, l'agresseur est connu de la victime (conjoint, ex-conjoint, membre de la famille, ami, collègue).</p>
+     </div>
+     <div class="stat-item">
+      <h3>Impact psychologique</h3>
+      <p>Les victimes de violences sexuelles ont 4 fois plus de risques de développer un syndrome de stress post-traumatique. 59% des victimes développent des troubles anxieux et 45% souffrent de dépression.</p>
+     </div>
+    </div>
+    <div class="warning-places">
+     <h3>⚠️ Lieux et Situations à Risque</h3>
+     <ul>
+      <li><strong>Transports en commun :</strong> Particulièrement aux heures de pointe et tard le soir. Privilégiez les wagons avec d'autres passagers.</li>
+      <li><strong>Parkings isolés :</strong> Surtout les parkings souterrains et mal éclairés. Restez vigilant et demandez un accompagnement si possible.</li>
+      <li><strong>Soirées professionnelles :</strong> Les pots de départ et événements d'entreprise avec alcool peuvent créer des situations à risque.</li>
+      <li><strong>Espaces de travail isolés :</strong> Bureaux vides, salles de réunion fermées, entrepôts. Privilégiez les espaces ouverts pour les rendez-vous.</li>
+      <li><strong>Festivals et événements bondés :</strong> La foule peut être utilisée pour commettre des agressions. Restez en groupe et établissez un point de rendez-vous.</li>
+      <li><strong>Applications de rencontre :</strong> Premiers rendez-vous dans des lieux publics, informez un proche de votre localisation.</li>
+     </ul>
+    </div>
+    <div class="help-resources">
+     <h3>🆘 Ressources d'Aide</h3>
+     <p><strong>3919 - Violences Femmes Info :</strong> Numéro gratuit et anonyme, 7j/7 de 9h à 22h (du lundi au vendredi) et de 9h à 18h (samedi, dimanche et jours fériés)</p>
+     <p><strong>17 ou 112 :</strong> En cas d'urgence, contactez la police ou la gendarmerie</p>
+     <p><strong>116 006 :</strong> Numéro d'aide aux victimes, gratuit et confidentiel</p>
+     <p><strong>01 45 84 24 24 :</strong> SOS Viols Femmes Informations, du lundi au vendredi de 10h à 19h</p>
+     <p><strong>Plateforme arretonslesviolences.gouv.fr :</strong> Signalement en ligne disponible 24h/24</p>
+    </div>
+    <div class="sources">
+     <h3>📚 Sources</h3>
+     <ul>
+      <li>Enquête IFOP pour la Fondation Jean Jaurès (2018) - Harcèlement sexuel au travail</li>
+      <li>Haut Conseil à l'Égalité entre les femmes et les hommes (2015) - Harcèlement sexiste et violences sexuelles dans les transports</li>
+      <li>Ministère de l'Intérieur - Service statistique ministériel de la sécurité intérieure (2022)</li>
+      <li>Enquête Virage (Violences et rapports de genre) - INED (2015)</li>
+      <li>Organisation Mondiale de la Santé (OMS) - Rapport sur les violences sexuelles (2021)</li>
+      <li>Collectif #NousToutes - Observatoire des violences faites aux femmes</li>
+     </ul>
+  </div>
+  <div style="text-align: center; margin-top: 20px;">
+   <button class="btn" onclick="location.reload()">Recommencer le Quiz</button>
+   <button class="btn" onclick="window.location.href='index.html'" style="margin-left:12px;">Retour à l'accueil</button>
+  </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      quiz_title: "Quiz de Sensibilisation aux Violences Sexuelles et Sexistes",
+      intro_text: "Ce quiz éducatif vise à sensibiliser sur les réalités des violences sexuelles et sexistes dans le monde du travail et les espaces publics et privés. Testez vos connaissances et découvrez des statistiques importantes.",
+      warning_message: "⚠️ Ce quiz aborde des sujets sensibles liés aux violences sexuelles et sexistes. Si vous vous sentez mal à l'aise, n'hésitez pas à faire une pause.",
+      start_button: "Commencer le Quiz",
+      background_color: "#667eea",
+      surface_color: "#ffffff",
+      text_color: "#2d3748",
+      primary_action_color: "#667eea",
+      secondary_action_color: "#764ba2",
+      font_family: "Segoe UI",
+      font_size: 16
+    };
+
+    const questions = [
+      {
+        question: "Quelle proportion de femmes en France a été victime de harcèlement sexuel au travail au cours de sa carrière ?",
+        options: ["1 femme sur 10", "1 femme sur 5", "1 femme sur 3", "1 femme sur 2"],
+        correct: 2,
+        explanation: "Selon l'enquête IFOP de 2018, 1 femme sur 3 a été victime de harcèlement sexuel au travail. Ce chiffre alarmant montre l'ampleur du problème dans le milieu professionnel."
+      },
+      {
+        question: "Le harcèlement sexuel peut-il être constitué par des remarques répétées à connotation sexuelle ?",
+        options: ["Non, il faut un contact physique", "Oui, les propos suffisent", "Seulement si c'est écrit", "Uniquement en privé"],
+        correct: 1,
+        explanation: "Le harcèlement sexuel est constitué dès lors qu'il y a des propos ou comportements à connotation sexuelle répétés qui portent atteinte à la dignité ou créent un environnement intimidant, hostile ou offensant."
+      },
+      {
+        question: "Quelle est la proportion d'hommes victimes de violences sexuelles au cours de leur vie ?",
+        options: ["1 sur 50", "1 sur 25", "1 sur 10", "1 sur 6"],
+        correct: 3,
+        explanation: "1 homme sur 6 a été victime de violences sexuelles au cours de sa vie. Les hommes sont aussi concernés mais en parlent encore moins en raison des stéréotypes de masculinité."
+      },
+      {
+        question: "Dans quel pourcentage des cas l'agresseur est-il connu de la victime ?",
+        options: ["30%", "50%", "75%", "91%"],
+        correct: 3,
+        explanation: "Dans 91% des cas, l'agresseur est connu de la victime (conjoint, ex-conjoint, famille, ami, collègue). L'idée de l'agresseur inconnu dans une ruelle sombre est un mythe qui ne représente qu'une minorité des cas."
+      },
+      {
+        question: "Qu'est-ce que le 'sexisme ordinaire' au travail ?",
+        options: [
+          "Des blagues occasionnelles sans importance",
+          "Des attitudes et remarques discriminantes banalisées au quotidien",
+          "Un terme inventé par les médias",
+          "Uniquement les inégalités salariales"
+        ],
+        correct: 1,
+        explanation: "Le sexisme ordinaire désigne l'ensemble des attitudes, propos et comportements discriminants basés sur le sexe, qui sont banalisés et considérés comme 'normaux' dans le quotidien professionnel. Il crée un climat hostile et peut évoluer vers du harcèlement."
+      },
+      {
+        question: "Quel pourcentage de femmes a subi du harcèlement dans les transports en commun ?",
+        options: ["45%", "60%", "75%", "87%"],
+        correct: 3,
+        explanation: "87% des femmes utilisatrices de transports en commun ont subi au moins une forme de harcèlement sexuel. Les transports sont un lieu particulièrement à risque, notamment aux heures de pointe."
+      },
+      {
+        question: "Un employeur peut-il être tenu responsable du harcèlement sexuel dans son entreprise ?",
+        options: [
+          "Non, c'est une affaire privée",
+          "Oui, il a une obligation de prévention et de protection",
+          "Seulement s'il était au courant",
+          "Uniquement dans les grandes entreprises"
+        ],
+        correct: 1,
+        explanation: "L'employeur a une obligation légale de prévenir et de protéger ses salariés contre le harcèlement sexuel. Il peut être tenu responsable même s'il n'était pas au courant, d'où l'importance de mettre en place des politiques de prévention."
+      },
+      {
+        question: "Quel est le délai de prescription pour porter plainte pour viol en France ?",
+        options: ["3 ans", "6 ans", "10 ans", "20 ans"],
+        correct: 3,
+        explanation: "Le délai de prescription pour un viol est de 20 ans à partir de la majorité de la victime si elle était mineure au moment des faits, et de 20 ans à partir des faits pour une victime majeure. Ce délai a été allongé pour tenir compte du temps nécessaire aux victimes pour parler."
+      },
+      {
+        question: "Qu'est-ce que le 'victim blaming' ?",
+        options: [
+          "Soutenir les victimes",
+          "Rendre la victime responsable de l'agression",
+          "Un terme juridique",
+          "Une méthode d'enquête"
+        ],
+        correct: 1,
+        explanation: "Le 'victim blaming' consiste à rendre la victime responsable de l'agression subie (par sa tenue, son comportement, etc.). C'est une attitude toxique qui aggrave le traumatisme et décourage les victimes de parler. La seule personne responsable est l'agresseur."
+      },
+      {
+        question: "Quel pourcentage de victimes de harcèlement sexuel au travail porte plainte ?",
+        options: ["5%", "15%", "30%", "50%"],
+        correct: 0,
+        explanation: "Seulement 5% des victimes portent plainte, principalement par peur des représailles professionnelles, de ne pas être crues, ou de perdre leur emploi. C'est pourquoi il est crucial de créer un environnement de travail sûr où les victimes peuvent parler."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    async function onConfigChange(config) {
+      const baseFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Tahoma, Geneva, Verdana, sans-serif';
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+      document.body.style.fontFamily = `${baseFont}, ${baseFontStack}`;
+      document.body.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondaryColor} 100%)`;
+
+      const container = document.querySelector('.container');
+      if (container) {
+        container.style.background = surfaceColor;
+        container.style.color = textColor;
+      }
+
+      const title = document.getElementById('main-title');
+      if (title) {
+        title.textContent = config.quiz_title || defaultConfig.quiz_title;
+        title.style.fontSize = `${baseSize * 2}px`;
+        title.style.color = textColor;
+      }
+
+      const intro = document.getElementById('intro-paragraph');
+      if (intro) {
+        intro.textContent = config.intro_text || defaultConfig.intro_text;
+        intro.style.fontSize = `${baseSize}px`;
+      }
+
+      const warning = document.getElementById('warning-text');
+      if (warning) {
+        warning.textContent = config.warning_message || defaultConfig.warning_message;
+        warning.style.fontSize = `${baseSize * 0.875}px`;
+      }
+
+      const startBtn = document.getElementById('start-btn');
+      if (startBtn) {
+        startBtn.textContent = config.start_button || defaultConfig.start_button;
+        startBtn.style.fontSize = `${baseSize}px`;
+        startBtn.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      }
+
+      const allButtons = document.querySelectorAll('.btn');
+      allButtons.forEach(btn => {
+        btn.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+        btn.style.fontSize = `${baseSize}px`;
+      });
+
+      const questionHeaders = document.querySelectorAll('.question-header');
+      questionHeaders.forEach(header => {
+        header.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      });
+
+      const progressFill = document.querySelector('.progress-fill');
+      if (progressFill) {
+        progressFill.style.background = `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      }
+
+      const allText = document.querySelectorAll('h1, h2, h3, p, li, .option');
+      allText.forEach(el => {
+        if (!el.classList.contains('selected') && !el.classList.contains('correct') && !el.classList.contains('incorrect')) {
+          el.style.color = textColor;
+        }
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["quiz_title", config.quiz_title || defaultConfig.quiz_title],
+          ["intro_text", config.intro_text || defaultConfig.intro_text],
+          ["warning_message", config.warning_message || defaultConfig.warning_message],
+          ["start_button", config.start_button || defaultConfig.start_button]
+        ])
+      });
+    }
+
+    document.getElementById('start-btn').addEventListener('click', startQuiz);
+
+    function startQuiz() {
+      document.getElementById('welcome-screen').style.display = 'none';
+      document.getElementById('quiz-section').style.display = 'block';
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      answered = false;
+      const question = questions[currentQuestion];
+      
+      document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} sur ${questions.length}`;
+      document.getElementById('question-text').textContent = question.question;
+      
+      const optionsContainer = document.getElementById('options');
+      optionsContainer.innerHTML = '';
+      
+      question.options.forEach((option, index) => {
+        const optionDiv = document.createElement('div');
+        optionDiv.className = 'option';
+        optionDiv.textContent = option;
+        optionDiv.addEventListener('click', () => selectOption(index));
+        optionsContainer.appendChild(optionDiv);
+      });
+      
+      document.getElementById('explanation').style.display = 'none';
+      document.getElementById('next-btn').style.display = 'none';
+      document.getElementById('question-container').style.display = 'block';
+      
+      updateProgress();
+    }
+
+    function selectOption(selectedIndex) {
+      if (answered) return;
+      
+      answered = true;
+      const question = questions[currentQuestion];
+      const options = document.querySelectorAll('.option');
+      
+      options.forEach((option, index) => {
+        if (index === question.correct) {
+          option.classList.add('correct');
+        } else if (index === selectedIndex) {
+          option.classList.add('incorrect');
+        }
+        option.style.cursor = 'default';
+      });
+      
+      if (selectedIndex === question.correct) {
+        score++;
+      }
+      
+      document.getElementById('explanation-text').textContent = question.explanation;
+      document.getElementById('explanation').style.display = 'block';
+      document.getElementById('next-btn').style.display = 'block';
+    }
+
+    function updateProgress() {
+      const progress = ((currentQuestion + 1) / questions.length) * 100;
+      document.getElementById('progress').style.width = progress + '%';
+    }
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+      currentQuestion++;
+      
+      if (currentQuestion < questions.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    });
+
+    function showResults() {
+      document.getElementById('quiz-section').style.display = 'none';
+      document.getElementById('results').style.display = 'block';
+      
+      const percentage = Math.round((score / questions.length) * 100);
+      document.getElementById('score').textContent = `${score}/${questions.length} (${percentage}%)`;
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a32076e009d09e',t:'MTc2MjQxNjc1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

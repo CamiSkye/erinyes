@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="fr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Sensibilisation aux Violences</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 40px;
+      margin: 40px auto;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .header h1 {
+      color: #764ba2;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .header p {
+      color: #666;
+      font-size: 16px;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    
+    .question-card {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-left: 5px solid #764ba2;
+    }
+    
+    .question-number {
+      color: #764ba2;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .question-text {
+      color: #333;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .answer-buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .answer-btn {
+      flex: 1;
+      padding: 15px 30px;
+      border: 2px solid #764ba2;
+      background: white;
+      color: #764ba2;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .answer-btn:hover {
+      background: #764ba2;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+    }
+    
+    .answer-btn.selected {
+      background: #764ba2;
+      color: white;
+    }
+    
+    .answer-btn.correct {
+      background: #10b981;
+      border-color: #10b981;
+      color: white;
+    }
+    
+    .answer-btn.incorrect {
+      background: #ef4444;
+      border-color: #ef4444;
+      color: white;
+    }
+    
+    .answer-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+    
+    .explanation {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border-left: 4px solid #764ba2;
+      display: none;
+    }
+    
+    .explanation.show {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .explanation-title {
+      color: #764ba2;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .explanation-text {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    
+    .source {
+      color: #888;
+      font-size: 14px;
+      font-style: italic;
+    }
+    
+    .next-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: none;
+    }
+    
+    .next-btn.show {
+      display: block;
+    }
+    
+    .next-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(118, 75, 162, 0.4);
+    }
+    
+    .results {
+      display: none;
+      text-align: center;
+    }
+    
+    .results.show {
+      display: block;
+    }
+    
+    .score-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      color: white;
+    }
+    
+    .score-number {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    
+    .score-text {
+      font-size: 18px;
+    }
+    
+    .emergency-section {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 15px;
+      padding: 30px;
+      margin-top: 30px;
+    }
+    
+    .emergency-title {
+      color: #856404;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    .emergency-subtitle {
+      color: #856404;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .emergency-numbers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    
+    .emergency-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #764ba2;
+    }
+    
+    .emergency-card h3 {
+      color: #764ba2;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .emergency-card .number {
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .emergency-card .description {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .restart-btn {
+      width: 100%;
+      padding: 15px;
+      background: white;
+      color: #764ba2;
+      border: 2px solid #764ba2;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .restart-btn:hover {
+      background: #764ba2;
+      color: white;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <h1 id="quiz-title">Quiz de Sensibilisation aux Violences Sexuelles</h1>
+    <p id="quiz-subtitle">Testez vos connaissances sur les réalités des violences sexuelles</p>
+   </div>
+   <div class="progress-bar">
+    <div class="progress-fill" id="progress"></div>
+   </div>
+   <div id="quiz-container"></div><button class="next-btn" id="next-btn">Question suivante</button>
+   <div class="results" id="results">
+    <h2>Résultats du Quiz</h2>
+    <div class="score-circle">
+     <div class="score-number" id="score-number">
+      0
+     </div>
+     <div class="score-text">
+      sur 20
+     </div>
+    </div>
+    <p id="result-message"></p>
+    <div class="emergency-section">
+     <h2 class="emergency-title" id="emergency-title">🆘 En cas d'urgence</h2>
+     <p class="emergency-subtitle" id="emergency-subtitle">N'hésitez pas à appeler ces numéros gratuits et confidentiels</p>
+     <div class="emergency-numbers">
+      <div class="emergency-card">
+       <h3>Violences Femmes Info</h3>
+       <div class="number">
+        3919
+       </div>
+       <div class="description">
+        Gratuit, anonyme, 24h/24, 7j/7
+       </div>
+      </div>
+      <div class="emergency-card">
+       <h3>Viols Femmes Informations</h3>
+       <div class="number">
+        0 800 05 95 95
+       </div>
+       <div class="description">
+        Gratuit, anonyme, lun-ven 10h-19h
+       </div>
+      </div>
+      <div class="emergency-card">
+       <h3>SOS Viols (Hommes)</h3>
+       <div class="number">
+        0 810 05 95 95
+       </div>
+       <div class="description">
+        Écoute pour hommes victimes
+       </div>
+      </div>
+      <div class="emergency-card">
+       <h3>Urgences</h3>
+       <div class="number">
+        17 ou 112
+       </div>
+       <div class="description">
+        Police/Gendarmerie
+       </div>
+      </div>
+      <div class="emergency-card">
+       <h3>SAMU</h3>
+       <div class="number">
+        15
+       </div>
+       <div class="description">
+        Urgences médicales
+       </div>
+      </div>
+      <div class="emergency-card">
+       <h3>SOS Amitié</h3>
+       <div class="number">
+        09 72 39 40 50
+       </div>
+       <div class="description">
+        Écoute 24h/24, 7j/7
+       </div>
+      </div>
+     </div>
+  </div>
+  <div style="display:flex; gap:10px; margin-top:20px;">
+   <button class="restart-btn" id="restart-btn">Recommencer le quiz</button>
+   <button class="restart-btn" onclick="window.location.href='index.html'">Retour à l'accueil</button>
+  </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      quiz_title: "Quiz de Sensibilisation aux Violences Sexuelles",
+      quiz_subtitle: "Testez vos connaissances sur les réalités des violences sexuelles",
+      emergency_title: "🆘 En cas d'urgence",
+      emergency_subtitle: "N'hésitez pas à appeler ces numéros gratuits et confidentiels"
+    };
+
+    const questions = [
+      {
+        question: "1 femme sur 3 dans le monde a subi des violences physiques ou sexuelles au cours de sa vie.",
+        answer: true,
+        explanation: "Selon l'OMS, environ 1 femme sur 3 (35%) dans le monde a subi des violences physiques et/ou sexuelles de la part d'un partenaire intime ou des violences sexuelles de la part d'une autre personne au cours de sa vie.",
+        source: "Organisation Mondiale de la Santé (OMS), 2021"
+      },
+      {
+        question: "Les hommes ne peuvent pas être victimes de violences sexuelles.",
+        answer: false,
+        explanation: "Les hommes peuvent également être victimes de violences sexuelles. Environ 1 homme sur 6 a subi des violences sexuelles avant l'âge de 18 ans. Les hommes victimes font face à des stigmates particuliers qui les empêchent souvent de parler.",
+        source: "Centers for Disease Control and Prevention (CDC)"
+      },
+      {
+        question: "La majorité des agressions sexuelles sont commises par des inconnus.",
+        answer: false,
+        explanation: "Faux. Dans environ 80% des cas, l'agresseur est connu de la victime (membre de la famille, ami, collègue, partenaire). Seulement 20% des agressions sont commises par des inconnus.",
+        source: "Ministère de l'Intérieur français, 2020"
+      },
+      {
+        question: "Une victime qui ne se débat pas consent à l'acte sexuel.",
+        answer: false,
+        explanation: "Absolument faux. L'absence de résistance physique ne signifie pas consentement. La sidération (paralysie psychique) est une réaction fréquente face à une agression. Le consentement doit être libre, éclairé et enthousiaste.",
+        source: "Mémoire Traumatique et Victimologie, Dr Muriel Salmona"
+      },
+      {
+        question: "En France, seulement 10% des victimes de viol portent plainte.",
+        answer: true,
+        explanation: "Vrai. Selon les études, seulement 10 à 12% des victimes de viol déposent plainte. Les raisons incluent la honte, la peur, le traumatisme, et la crainte de ne pas être cru(e).",
+        source: "Enquête Virage (INED), 2015"
+      },
+      {
+        question: "Les violences sexuelles n'ont pas de conséquences graves sur la santé mentale.",
+        answer: false,
+        explanation: "Faux. Les violences sexuelles ont des conséquences graves : stress post-traumatique, dépression, anxiété, troubles du sommeil, idées suicidaires. 59% des victimes développent un syndrome de stress post-traumatique.",
+        source: "OMS et études psychiatriques"
+      },
+      {
+        question: "La tenue justifie l'agression.",
+        answer: false,
+        explanation: "Totalement faux. La tenue vestimentaire n'a aucun lien avec les agressions sexuelles. Cette idée est un mythe dangereux qui fait porter la responsabilité sur la victime. L'agresseur est le seul responsable.",
+        source: "Études criminologiques internationales"
+      },
+      {
+        question: "Les violences conjugales touchent tous les milieux sociaux.",
+        answer: true,
+        explanation: "Vrai. Les violences conjugales touchent tous les milieux sociaux, culturels, économiques et éducatifs. Aucune catégorie de population n'est épargnée.",
+        source: "Ministère de l'Égalité femmes-hommes, France"
+      },
+      {
+        question: "Un homme ne peut pas être violé par une femme.",
+        answer: false,
+        explanation: "Faux. Les hommes peuvent être victimes de viols commis par des femmes. Bien que moins fréquent, ce type d'agression existe et est tout aussi traumatisant. La loi reconnaît ces agressions.",
+        source: "Code pénal français, Article 222-23"
+      },
+      {
+        question: "En France, une femme meurt tous les 3 jours sous les coups de son conjoint ou ex-conjoint.",
+        answer: true,
+        explanation: "Vrai. En 2022, 122 femmes sont décédées victimes de leur partenaire ou ex-partenaire, soit environ 1 femme tous les 3 jours. Ce chiffre reste stable depuis plusieurs années.",
+        source: "Ministère de l'Intérieur, Étude nationale 2022"
+      },
+      {
+        question: "Les enfants ne peuvent pas être victimes de violences sexuelles dans leur propre famille.",
+        answer: false,
+        explanation: "Malheureusement faux. L'inceste représente une part importante des violences sexuelles sur mineurs. En France, 1 personne sur 10 déclare avoir subi de l'inceste. 80% des violences sexuelles sur mineurs sont commises dans le cercle familial.",
+        source: "CIIVISE (Commission Inceste), 2021"
+      },
+      {
+        question: "Le viol conjugal est reconnu par la loi française.",
+        answer: true,
+        explanation: "Vrai. Depuis 1992, le viol conjugal est reconnu par la loi française. Le mariage ou la vie en couple ne crée aucune obligation d'avoir des relations sexuelles. Le consentement est toujours nécessaire.",
+        source: "Code pénal français, Jurisprudence 1992"
+      },
+      {
+        question: "Les victimes de violences sexuelles inventent souvent leur agression.",
+        answer: false,
+        explanation: "Faux. Les fausses accusations représentent entre 2 et 8% des plaintes, un taux similaire aux autres crimes. La grande majorité des témoignages sont véridiques. Ce mythe empêche les victimes de parler.",
+        source: "Études criminologiques, FBI et Police Nationale"
+      },
+      {
+        question: "L'alcool ou la drogue peuvent être utilisés pour faciliter une agression sexuelle.",
+        answer: true,
+        explanation: "Vrai. La soumission chimique (utilisation de substances pour diminuer la résistance) est utilisée dans environ 20% des agressions sexuelles. Les substances les plus utilisées sont l'alcool, le GHB et les benzodiazépines.",
+        source: "Agence Nationale de Sécurité du Médicament (ANSM)"
+      },
+      {
+        question: "Les hommes victimes de violences sexuelles sont moins traumatisés que les femmes.",
+        answer: false,
+        explanation: "Faux. Le traumatisme est tout aussi grave quel que soit le genre de la victime. Les hommes victimes font face à des difficultés supplémentaires liées aux stéréotypes de masculinité et ont souvent plus de mal à demander de l'aide.",
+        source: "Études psychologiques et psychiatriques"
+      },
+      {
+        question: "Le harcèlement sexuel au travail est puni par la loi en France.",
+        answer: true,
+        explanation: "Vrai. Le harcèlement sexuel au travail est un délit puni de 2 ans d'emprisonnement et 30 000€ d'amende. L'employeur a l'obligation de protéger ses salariés et peut être tenu responsable.",
+        source: "Code pénal, Article 222-33 et Code du travail"
+      },
+      {
+        question: "Une personne en état d'ébriété peut donner son consentement à un acte sexuel.",
+        answer: false,
+        explanation: "Faux. Une personne en état d'ébriété avancée ou inconsciente ne peut pas donner un consentement valide. Avoir des relations sexuelles avec une personne dans cet état constitue une agression sexuelle ou un viol.",
+        source: "Jurisprudence française et Code pénal"
+      },
+      {
+        question: "Les violences sexuelles peuvent causer des troubles physiques durables.",
+        answer: true,
+        explanation: "Vrai. Au-delà des traumatismes psychologiques, les violences sexuelles peuvent causer des douleurs chroniques, des troubles gynécologiques, des maladies sexuellement transmissibles, et d'autres problèmes de santé physique à long terme.",
+        source: "OMS, Études médicales"
+      },
+      {
+        question: "Il existe un délai de prescription pour porter plainte pour viol en France.",
+        answer: true,
+        explanation: "Vrai. Pour les majeurs, le délai est de 20 ans après les faits. Pour les mineurs, le délai est de 30 ans à partir de la majorité (soit jusqu'à 48 ans). Ces délais ont été allongés en 2018 pour mieux protéger les victimes.",
+        source: "Code de procédure pénale français, Loi Schiappa 2018"
+      },
+      {
+        question: "Les hommes qui subissent des violences sexuelles deviennent automatiquement des agresseurs.",
+        answer: false,
+        explanation: "Absolument faux. C'est un mythe dangereux. La grande majorité des victimes, quel que soit leur genre, ne deviennent jamais des agresseurs. Ce mythe stigmatise les victimes masculines et les empêche de chercher de l'aide.",
+        source: "Études criminologiques et psychologiques"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    function updateProgress() {
+      const progress = ((currentQuestion + 1) / questions.length) * 100;
+      document.getElementById('progress').style.width = progress + '%';
+    }
+
+    function displayQuestion() {
+      answered = false;
+      const container = document.getElementById('quiz-container');
+      const q = questions[currentQuestion];
+      
+      container.innerHTML = `
+        <div class="question-card">
+          <div class="question-number">Question ${currentQuestion + 1} sur ${questions.length}</div>
+          <div class="question-text">${q.question}</div>
+          <div class="answer-buttons">
+            <button class="answer-btn" onclick="checkAnswer(true)">VRAI</button>
+            <button class="answer-btn" onclick="checkAnswer(false)">FAUX</button>
+          </div>
+          <div class="explanation" id="explanation">
+            <div class="explanation-title">Explication :</div>
+            <div class="explanation-text">${q.explanation}</div>
+            <div class="source">Source : ${q.source}</div>
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('next-btn').classList.remove('show');
+      updateProgress();
+    }
+
+    function checkAnswer(userAnswer) {
+      if (answered) return;
+      answered = true;
+      
+      const q = questions[currentQuestion];
+      const buttons = document.querySelectorAll('.answer-btn');
+      const explanation = document.getElementById('explanation');
+      
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        const btnAnswer = btn.textContent === 'VRAI';
+        if (btnAnswer === q.answer) {
+          btn.classList.add('correct');
+        } else if (btnAnswer === userAnswer && userAnswer !== q.answer) {
+          btn.classList.add('incorrect');
+        }
+      });
+      
+      if (userAnswer === q.answer) {
+        score++;
+      }
+      
+      explanation.classList.add('show');
+      document.getElementById('next-btn').classList.add('show');
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        displayQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById('quiz-container').style.display = 'none';
+      document.getElementById('next-btn').style.display = 'none';
+      document.querySelector('.progress-bar').style.display = 'none';
+      
+      const results = document.getElementById('results');
+      const scoreNumber = document.getElementById('score-number');
+      const resultMessage = document.getElementById('result-message');
+      
+      scoreNumber.textContent = score;
+      
+      let message = '';
+      const percentage = (score / questions.length) * 100;
+      
+      if (percentage >= 90) {
+        message = '🌟 Excellent ! Vous avez une très bonne connaissance des réalités des violences sexuelles. Continuez à sensibiliser autour de vous.';
+      } else if (percentage >= 70) {
+        message = '👍 Très bien ! Vous avez de bonnes connaissances. Continuez à vous informer pour mieux comprendre et aider les victimes.';
+      } else if (percentage >= 50) {
+        message = '📚 Bien ! Vous avez des connaissances de base. N\'hésitez pas à vous informer davantage sur ce sujet important.';
+      } else {
+        message = '💡 Ce quiz vous a permis d\'apprendre beaucoup de choses. Les violences sexuelles sont un sujet complexe qui nécessite de déconstruire de nombreux mythes.';
+      }
+      
+      resultMessage.textContent = message;
+      results.classList.add('show');
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      score = 0;
+      answered = false;
+      
+      document.getElementById('quiz-container').style.display = 'block';
+      document.getElementById('results').classList.remove('show');
+      document.querySelector('.progress-bar').style.display = 'block';
+      
+      displayQuestion();
+    }
+
+    document.getElementById('next-btn').addEventListener('click', nextQuestion);
+    document.getElementById('restart-btn').addEventListener('click', restartQuiz);
+
+    async function onConfigChange(config) {
+      document.getElementById('quiz-title').textContent = config.quiz_title || defaultConfig.quiz_title;
+      document.getElementById('quiz-subtitle').textContent = config.quiz_subtitle || defaultConfig.quiz_subtitle;
+      document.getElementById('emergency-title').textContent = config.emergency_title || defaultConfig.emergency_title;
+      document.getElementById('emergency-subtitle').textContent = config.emergency_subtitle || defaultConfig.emergency_subtitle;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["quiz_title", config.quiz_title || defaultConfig.quiz_title],
+        ["quiz_subtitle", config.quiz_subtitle || defaultConfig.quiz_subtitle],
+        ["emergency_title", config.emergency_title || defaultConfig.emergency_title],
+        ["emergency_subtitle", config.emergency_subtitle || defaultConfig.emergency_subtitle]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    displayQuestion();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a32fbf16e8f85c',t:'MTc2MjQxNzM4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

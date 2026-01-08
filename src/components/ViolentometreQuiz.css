@@ -1,0 +1,85 @@
+/* ===== Items ===== */
+.quiz-item {
+  background-color: #ffffff; /* fond blanc */
+  color: #000000;            /* texte noir */
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  font-size: 0.75rem; /* texte lisible */
+  line-height: 1.2;
+  cursor: grab;
+}
+
+.quiz-item:active {
+  cursor: grabbing;
+  transform: scale(0.95);
+}
+
+.quiz-item--correct {
+  background-color: #1FA055;
+  color: white;
+}
+
+.quiz-item--wrong {
+  background-color: #fca5a5;
+  color: white;
+  text-decoration: line-through;
+}
+
+.quiz-item--inactive {
+  opacity: 0.6;
+}
+
+/* ===== Animations ===== */
+@keyframes pop {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-pop {
+  animation: pop 0.25s ease-out;
+}
+
+.animate-shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* ===== SlideBack ===== */
+.quiz-item--return {
+  animation: slideBack 0.3s ease-out;
+}
+
+@keyframes slideBack {
+  from { transform: translateY(-10px); opacity: 0.5; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+
+/* ===== Bouton téléchargement Violentomètre ===== */
+.violentometre-download-btn {
+  background-color: #9B7FD7 !important; /* violet */
+  color: white !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.violentometre-download-btn:hover {
+  background-color: #8B6BC7 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.45);
+}
