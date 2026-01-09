@@ -14,6 +14,18 @@ import action from '../assets/QueFaire.png';
 import association from '../assets/Association.png';
 import ViolentometreQuiz from './ViolentometreQuiz';
 
+interface Poster {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  format: string;
+  size: string;
+  preview: any;
+  colors: string[];
+  downloads?: number; // optionnelle
+}
+
 export function PostersPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,7 +42,8 @@ export function PostersPage() {
       format: "A3",
       size: "510 Ko",
       preview: sensibilisation,
-      colors: ["#9B7FD7", "#FFA45C"]
+      colors: ["#9B7FD7", "#FFA45C"],
+      downloads: 0
     },
     {
       id: 2,
@@ -40,7 +53,8 @@ export function PostersPage() {
       format: "A3",
       size: "623 Ko",
       preview: consentement,
-      colors: ["#9B7FD7", "#FFA45C"]
+      colors: ["#9B7FD7", "#FFA45C"],
+      downloads: 0
     },
     {
       id: 3,
@@ -50,7 +64,8 @@ export function PostersPage() {
       format: "A3",
       size: "787 Ko",
       preview: action,
-      colors: ["#9B7FD7", "#FFA45C"]
+      colors: ["#9B7FD7", "#FFA45C"],
+      downloads: 0
     },
     {
       id: 4,
@@ -60,7 +75,8 @@ export function PostersPage() {
       format: "A3",
       size: "1.6 Mo",
       preview: cocktail,
-      colors: ["#9B7FD7", "#FFA45C"]
+      colors: ["#9B7FD7", "#FFA45C"],
+      downloads: 0
     },
     {
       id: 5,
@@ -70,7 +86,8 @@ export function PostersPage() {
       format: "A3",
       size: "412 Ko",
       preview: phone,
-      colors: ["#9B7FD7", "#FFA45C"]
+      colors: ["#9B7FD7", "#FFA45C"],
+      downloads: 0
     },
     {
       id: 6,
@@ -80,7 +97,8 @@ export function PostersPage() {
       format: "A4",
       size: "3.7 MB",
       preview: association,
-      colors: ["#FF69B4", "#8B5E3C"]
+      colors: ["#FF69B4", "#8B5E3C"],
+      downloads: 0
     }
   ];
 
