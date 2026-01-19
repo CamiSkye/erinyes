@@ -21,7 +21,7 @@ export function TrainingPage() {
     {
       id: 2,
       title: "Module : Chiffres Clés",
-      description: "Apprenez combien de personnes sont réellement sujet aux agressions sexuelles et/ou harcèlement sexuel.",
+      description: "Apprenez combien de personnes sont réellement sujettes aux agressions sexuelles et/ou au harcèlement sexuel.",
       duration: "10 min",
       level: "Débutant",
       category: "Sensibilisation",
@@ -36,12 +36,12 @@ export function TrainingPage() {
       level: "Débutant",
       category: "Sensibilisation",
       icon: Heart,
-      url: "",
+      url: "https://view.genially.com/695e1ca565924c773156df4a/interactive-content-module-les-consequences",
     },
     {
       id: 4,
       title: "Module : Numéros et Associations",
-      description: "Apprenez et mémorisez tous les numéros d'urgences utiles pour les victimes d'agressions sexuelles.",
+      description: "Apprenez et mémorisez tous les numéros d'urgence utiles pour les victimes d'agressions sexuelles.",
       duration: "7 à 8 min",
       level: "Débutant",
       category: "Sensibilisation",
@@ -52,7 +52,7 @@ export function TrainingPage() {
       id: 5,
       title: "Module : Que pouvons-nous faire ?",
       description:
-        "Apprenez comment agir lorsque vous êtes témoins ou proches d'une victime.",
+        "Apprenez comment agir lorsque vous êtes témoin ou proche d'une victime.",
       duration: "10 min",
       level: "Avancé",
       category: "Éducation",
@@ -63,7 +63,7 @@ export function TrainingPage() {
     {
       id: 6,
       title: "Module : Qu'est ce que les VSS à l'école et/ou au travail",
-      description:"C'est un module qui va vous permettre de reconnaître les différents comportements lié aux VSS à l'école ou au travail.",
+      description:"Module qui va vous permettre de reconnaître les différents comportements liés aux VSS à l'école ou au travail.",
       duration: "7 min",
       level: "Avancé",
       category: "Travail",
@@ -86,7 +86,7 @@ export function TrainingPage() {
       id: 8,
       title: "Module: Comment réagir si on est victime ... ?",
       description:
-        "Dans ce module vous trouverez tout ce que vous devais savoir si un jour vous êtes victime de VSS au travail.",
+        "Dans ce module vous trouverez tout ce que vous devez savoir si un jour vous êtes victime de VSS au travail.",
       duration: "10 min",
       level: "Intermédiaire",
       category: "Travail",
@@ -103,7 +103,7 @@ export function TrainingPage() {
       category: "Travail",
       type: "specialisee",
       icon: BookOpen,
-      url: "",
+      url: "https://view.genially.com/6968a54a451843f1d4d0de16/presentation-comment-reagir-si-on-est-temoin",
     },
     {
       id: 10,
