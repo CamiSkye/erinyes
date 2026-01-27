@@ -24,7 +24,7 @@ export function TrainingPage() {
         },
         {
           id: 2,
-          title: "Module : Choffres Clés",
+          title: "Module : Chiffres Clés",
           duration: "10 min",
           description: "Apprenez combien de personnes sont réellement sujettes aux agressions sexuelles et/ou au harcèlement sexuel."
         },
@@ -101,8 +101,6 @@ export function TrainingPage() {
     switch (level) {
       case "Débutant":
         return "bg-green-100 text-green-800";
-      case "Intermédiaire":
-        return "bg-yellow-100 text-yellow-800";
       case "Avancé":
         return "bg-red-100 text-red-800";
       default:
@@ -116,8 +114,6 @@ export function TrainingPage() {
         return "bg-[#9B7FD7]/10 text-[#9B7FD7]";
       case "Éducation":
         return "bg-[#8B5E3C]/10 text-[#8B5E3C]";
-      case "Travail":
-        return "bg-blue-100 text-blue-800";
       default:
         return "bg-gray-100 text-gray-800";
     }
@@ -166,7 +162,7 @@ export function TrainingPage() {
           </div>
         )}
 
-<div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#8B5E3C] mb-6">
             Formations disponibles
           </h2>
@@ -241,9 +237,9 @@ export function TrainingPage() {
                       </div>
                                            
                       <div className="flex gap-3">
-                        <Button className="bg-[#9B7FD7] hover:bg-[#8B6BC7] text-white flex-1 cursor-pointer">
+                        <Button onClick={() => window.open(course.url, "_blank")} className="bg-[#9B7FD7] hover:bg-[#8B6BC7] text-white flex-1 cursor-pointer" >
                           <PlayCircle className="mr-2 h-4 w-4" />
-                          Commencer la formation 
+                          Commencer la formation
                         </Button>
                       </div>
                     </div>
