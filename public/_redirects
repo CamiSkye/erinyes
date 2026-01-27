@@ -1,5 +1,7 @@
-/admin      /404.html  404
-/api        /404.html  404
-/index.php  /404.html  404
+# Bloque tous les fichiers suspects
+/(.*)\.(php|asp|aspx|cgi|pl|env|sql|bak|zip|tar|gz)$  /404.html  404
+
+# Bloque dossiers sensibles
+/(wp-admin|wordpress|wp-login|phpmyadmin|admin|config|vendor)(/.*)?  /404.html  404
 
 /*          /index.html  200

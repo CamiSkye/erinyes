@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle,} from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -10,117 +11,91 @@ export function TrainingPage() {
   const courses = [
     {
       id: 1,
-      title: "Module : Définitions",
-      description: "Apprenez les différentes définitions afin de mieux comprendre ce qu'est une Violence Sexiste et Sexuelle.",
-      duration: "10 min",
+      title: "Reconnaître les violences sexistes et sexuelles",
+      description: "Apprenez à identifier les différentes formes de VSS et leurs impacts",
+      duration: "48 min",
       level: "Débutant",
+      modules: [
+        {
+          id: 1,
+          title: "Module : Définitions",
+          duration: "10 min",
+          description: "Apprenez les différentes définitions afin de mieux comprendre ce qu'est une Violence Sexiste et Sexuelle."
+        },
+        {
+          id: 2,
+          title: "Module : Choffres Clés",
+          duration: "10 min",
+          description: "Apprenez combien de personnes sont réellement sujettes aux agressions sexuelles et/ou au harcèlement sexuel."
+        },
+        {
+          id: 3,
+          title: "Module : Conséquences",
+          duration: "10 min",
+          description: "Repérez les signaux déclencheurs que peuvent montrer les victimes de Violences Sexistes et Sexuelles."
+        },
+        {
+          id: 4,
+          title: "Module : Numéros et Associations",
+          duration: "7 à 8 min",
+          description: "Apprenez et mémorisez tous les numéros d'urgence utiles pour les victimes d'agressions sexuelles."
+        },
+        {
+          id: 5,
+          title: "Module : Que pouvons-nous faire ?",
+          duration: "10 min",
+          description: "Apprenez comment agir lorsque vous êtes témoin ou proche d'une victime."
+        }
+      ],
       category: "Sensibilisation",
       icon: Shield,
       url: "https://view.genially.com/6926bbee0e931772919eaa3a/interactive-content-definitions",
     },
+    
     {
       id: 2,
-      title: "Module : Chiffres Clés",
-      description: "Apprenez combien de personnes sont réellement sujettes aux agressions sexuelles et/ou au harcèlement sexuel.",
-      duration: "10 min",
-      level: "Débutant",
-      category: "Sensibilisation",
-      icon: Heart,
-      url: "https://view.genially.com/691d855839b87d7f045006ba/interactive-content-vss-les-chiffres-cles",
-    },
-    {
-      id: 3,
-      title: "Module : Conséquences",
-      description: "Repérez les signaux déclencheurs que peuvent montrer les victimes de Violences Sexistes et Sexuelles.",
-      duration: "10 min",
-      level: "Débutant",
-      category: "Sensibilisation",
-      icon: Heart,
-      url: "https://view.genially.com/695e1ca565924c773156df4a/interactive-content-module-les-consequences",
-    },
-    {
-      id: 4,
-      title: "Module : Numéros et Associations",
-      description: "Apprenez et mémorisez tous les numéros d'urgence utiles pour les victimes d'agressions sexuelles.",
-      duration: "7 à 8 min",
-      level: "Débutant",
-      category: "Sensibilisation",
-      icon: Heart,
-      url: "https://view.genially.com/691da08e17ff2ad06981c7d0/presentation-module-associations-et-numeros-durgence",
-    },
-    {
-      id: 5,
-      title: "Module : Que pouvons-nous faire ?",
-      description:
-        "Apprenez comment agir lorsque vous êtes témoin ou proche d'une victime.",
-      duration: "10 min",
+      title: "Prévention et sensibilisation en milieu scolaire et monde professionnel",
+      description: "Outils et méthodes pour éduquer à la prévention des VSS",
+      duration: "36 min",
       level: "Avancé",
+      modules: [
+        {
+          id: 1,
+          title: "Module : Qu'est ce que les VSS à l'école et/ou au travail",
+          duration: "7 min",
+          description: "Module qui va vous permettre de reconnaître les différents comportements liés aux VSS à l'école ou au travail."
+        },
+        {
+          id: 2,
+          title: "Module : Le Harcèlement au travail... En réalité ?",
+          duration: "7 min",
+          description: "Ce module permet de déconstruire les idées reçues et de comprendre ce qu’est réellement le harcèlement au travail à travers des situations concrètes."
+        },
+        {
+          id: 3,
+          title: "Module: Comment réagir si on est victime ... ?",
+          duration: "10 min",
+          description: "Dans ce module vous trouverez tout ce que vous devez savoir si un jour vous êtes victime de VSS au travail."
+        },
+        {
+          id: 4,
+          title: "Module: Comment réagir si on est témoin ... ?",
+          duration: "7 min",
+          description: "Ce module donne les clés pour reconnaître une situation problématique et agir en tant que témoin face aux VSS."
+        },
+        {
+          id: 5,
+          title: "Module : Et le cadre légal ?",
+          duration: "5 min",
+          description: "À travers un quiz interactif, ce module permet de mieux comprendre le cadre légal des VSS, de façon accessible et engageante."
+        }
+      ],
       category: "Éducation",
-      icon: BookOpen,
-      url: "https://view.genially.com/692965e86b465effc246871c/interactive-content-comment-lutter-au-quotidien-contre-les-vss",
-    },
-
-    {
-      id: 6,
-      title: "Module : Qu'est ce que les VSS à l'école et/ou au travail",
-      description:"Module qui va vous permettre de reconnaître les différents comportements liés aux VSS à l'école ou au travail.",
-      duration: "7 min",
-      level: "Avancé",
-      category: "Travail",
-      type: "specialisee",
       icon: BookOpen,
       url: "https://view.genially.com/6942a528aaa0e433718e8144/presentation-quest-ce-que-les-vss-au-travail-ou-a-ecole",
     },
-    {
-      id: 7,
-      title: "Module : Le Harcèlement au travail... En réalité ?",
-      description:"Ce module permet de déconstruire les idées reçues et de comprendre ce qu’est réellement le harcèlement au travail à travers des situations concrètes.",
-      duration: "7 min",
-      level: "Avancé",
-      category: "Travail",
-      type: "specialisee",
-      icon: BookOpen,
-      url: "https://view.genially.com/6942b2ece4256494bf02e33b/presentation-le-harcelement-en-realite",
-    },
-    {
-      id: 8,
-      title: "Module: Comment réagir si on est victime ... ?",
-      description:
-        "Dans ce module vous trouverez tout ce que vous devez savoir si un jour vous êtes victime de VSS au travail.",
-      duration: "10 min",
-      level: "Intermédiaire",
-      category: "Travail",
-      type: "specialisee",
-      icon: Shield,
-      url: "https://view.genially.com/69394884b2956f2704ea0c8a/interactive-content-victime-de-violence-sexiste-et-sexuelle-au-travail", //A mettre dans le bon module
-    },
-    {
-      id: 9,
-      title: "Module: Comment réagir si on est témoin ... ?",
-      description:"Ce module donne les clés pour reconnaître une situation problématique et agir en tant que témoin face aux VSS.",
-      duration: "7 min",
-      level: "Avancé",
-      category: "Travail",
-      type: "specialisee",
-      icon: BookOpen,
-      url: "https://view.genially.com/6968a54a451843f1d4d0de16/presentation-comment-reagir-si-on-est-temoin",
-    },
-    {
-      id: 10,
-      title: "Module : Et le cadre légal ?",
-      description:"À travers un quiz interactif, ce module permet de mieux comprendre le cadre légal des VSS, de façon accessible et engageante.",
-      duration: "5 min",
-      level: "Avancé",
-      category: "Travail",
-      type: "specialisee",
-      icon: BookOpen,
-      url: "https://view.genially.com/695e37b809e52cf8e95e6fa8/interactive-content-et-le-cadre-legal",
-    },
   ];
 
-  const formationSpecialisee = courses.filter(
-    (course) => course.type === "specialisee"
-  );
 
   const getLevelColor = (level: string) => {
     switch (level) {
@@ -191,127 +166,94 @@ export function TrainingPage() {
           </div>
         )}
 
-        {/* 🌱 FORMATION INITIALE (inchangée) */}
-        <div className="max-w-4xl mx-auto">
+<div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#8B5E3C] mb-6">
-            Formation initiale
+            Formations disponibles
           </h2>
-
-          <div className="space-y-6">
-            {courses
-              .filter((course) => !course.type)
-              .map((course) => {
-                const IconComponent = course.icon;
-
-                return (
-                  <Card
-                    key={course.id}
-                    className="bg-white/95 border-[#E5E1DA]"
-                  >
-                    <CardHeader>
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-[#9B7FD7]/10 rounded-lg flex items-center justify-center">
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {courses.map((course) => {
+              const IconComponent = course.icon;
+              return (
+                <AccordionItem 
+                  key={course.id} 
+                  value={`course-${course.id}`}
+                  className="bg-white/95 border border-[#E5E1DA] rounded-lg overflow-hidden"
+                >
+                  <AccordionTrigger className="cursor-pointer hover:no-underline px-6 py-4 hover:bg-[#F5F1EA]/50">
+                    <div className="flex items-start justify-between w-full text-left pr-4">
+                      <div className="flex items-start space-x-4 flex-1">
+                        <div className="w-12 h-12 bg-[#9B7FD7] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
                           <IconComponent className="h-6 w-6 text-[#9B7FD7]" />
                         </div>
-                        <div>
-                          <CardTitle className="text-[#8B5E3C] mb-2">
-                            {course.title}
-                          </CardTitle>
-                          <CardDescription className="text-[#6B6B6B]">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-lg font-semibold text-[#8B5E3C] mb-1">{course.title}</h3>
+                          <p className="text-sm text-[#6B6B6B] mb-3">
                             {course.description}
-                          </CardDescription>
+                          </p>
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            <Badge className={getCategoryColor(course.category)}>
+                              {course.category}
+                            </Badge>
+                            <Badge className={getLevelColor(course.level)}>
+                              {course.level}
+                            </Badge>
+                          </div>
+                          <div className="flex items-center gap-4 text-sm text-[#6B6B6B]">
+                            <div className="flex items-center">
+                              <Clock className="mr-1 h-4 w-4" />
+                              {course.duration}
+                            </div>
+                            <div className="flex items-center">
+                              <BookOpen className="mr-1 h-4 w-4" />
+                              {course.modules.length} modules
+                            </div>
+                          </div>
                         </div>
                       </div>
-
-                      <div className="flex gap-2 mt-4">
-                        <Badge className={getCategoryColor(course.category)}>
-                          {course.category}
-                        </Badge>
-                        <Badge className={getLevelColor(course.level)}>
-                          {course.level}
-                        </Badge>
+                    </div>
+                  </AccordionTrigger>
+                  
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="pt-4 border-t border-[#E5E1DA]">
+                      <h4 className="font-semibold text-[#8B5E3C] mb-4">Modules de la formation :</h4>
+                      <div className="space-y-3 mb-6">
+                        {course.modules.map((module) => (
+                          <div 
+                            key={module.id}
+                            className="flex items-start gap-3 p-3 bg-[#F5F1EA] rounded-lg hover:bg-[#E5E1DA]/50 transition-colors"
+                          >
+                            <div className="w-8 h-8 bg-[#9B7FD7] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-semibold">
+                              {module.id}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between mb-1">
+                                <h5 className="font-medium text-[#8B5E3C]">{module.title}</h5>
+                                <span className="text-sm text-[#6B6B6B] flex items-center ml-2">
+                                  <Clock className="mr-1 h-3 w-3" />
+                                  {module.duration}
+                                </span>
+                              </div>
+                              <p className="text-sm text-[#6B6B6B]">{module.description}</p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    </CardHeader>
-
-                    <CardContent>
-                      <div className="flex items-center text-sm text-[#6B6B6B] mb-4">
-                        <Clock className="mr-1 h-4 w-4" />
-                        {course.duration}
-                      </div>
-
-                      <Button
-                        onClick={() => window.open(course.url, "_blank")}
-                        className="bg-[#9B7FD7] text-white w-full cursor-pointer"
-                      >
-                        <PlayCircle className="mr-2 h-4 w-4" />
-                        Commencer
-                      </Button>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-          </div>
-        </div>
-
-        {/* 🎯 FORMATION SPÉCIALISÉE */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <h2 className="text-2xl font-bold text-[#8B5E3C] mb-6">
-            Formation spécialisée
-          </h2>
-
-          <div className="space-y-6">
-            {formationSpecialisee.map((course) => {
-              const IconComponent = course.icon;
-
-              return (
-                <Card
-                  key={course.id}
-                  className="bg-white/95 border-[#E5E1DA]"
-                >
-                  <CardHeader>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-[#9B7FD7]/10 rounded-lg flex items-center justify-center">
-                        <IconComponent className="h-6 w-6 text-[#9B7FD7]" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-[#8B5E3C] mb-2">
-                          {course.title}
-                        </CardTitle>
-                        <CardDescription className="text-[#6B6B6B]">
-                          {course.description}
-                        </CardDescription>
+                                           
+                      <div className="flex gap-3">
+                        <Button className="bg-[#9B7FD7] hover:bg-[#8B6BC7] text-white flex-1 cursor-pointer">
+                          <PlayCircle className="mr-2 h-4 w-4" />
+                          Commencer la formation 
+                        </Button>
                       </div>
                     </div>
-
-                    <div className="flex gap-2 mt-4">
-                      <Badge className={getCategoryColor(course.category)}>
-                        {course.category}
-                      </Badge>
-                      <Badge className={getLevelColor(course.level)}>
-                        {course.level}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent>
-                    <div className="flex items-center text-sm text-[#6B6B6B] mb-4">
-                      <Clock className="mr-1 h-4 w-4" />
-                      {course.duration}
-                    </div>
-
-                    <Button
-                      onClick={() => window.open(course.url, "_blank")}
-                      className="bg-[#9B7FD7] text-white w-full cursor-pointer"
-                    >
-                      <PlayCircle className="mr-2 h-4 w-4" />
-                      Commencer
-                    </Button>
-                  </CardContent>
-                </Card>
+                  </AccordionContent>
+                </AccordionItem>
               );
             })}
-          </div>
+          </Accordion>
         </div>
+
 
         {/* Call to action */}
         <section className="mt-16 text-center bg-[#9B7FD7] bg-opacity-5 rounded-lg p-8">

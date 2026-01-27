@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { Button } from "./ui/button";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   const quickLinks = [
     { name: "Accueil", to: "/accueil" },
     { name: "Formations", to: "/formations" },
@@ -103,7 +105,7 @@ export function Footer() {
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-white/80 text-sm mb-4 md:mb-0">
-              © 2025 Erinyes. Tous droits réservés.
+              © {currentYear} Erinyes. Tous droits réservés.
             </div>
           </div>
         </div>

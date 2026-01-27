@@ -44,10 +44,24 @@ export function StatisticsChart() {
                   border: "1px solid #E5E1DA",
                   borderRadius: "8px"
                 }}
-                formatter={(value) =>
-                  typeof value === "number" ? value.toLocaleString() : value
-                }
+                formatter={(value, name) => {
+                  let label = name;
+                  
+                  if (name === "victime_mineures") {
+                    label = "Victimes mineures";
+                  }
+
+                  if (name === "victimes") {
+                    label = "Victimes totales";
+                  }
+
+                  return [
+                    typeof value === "number" ? value.toLocaleString() : value,
+                    label
+                  ];
+                }}
               />
+
               <Bar dataKey="victimes" fill="#9B7FD7" />
               <Bar dataKey="victime_mineures" fill="#FFA45C" />
             </BarChart>
@@ -89,7 +103,18 @@ export function StatisticsChart() {
                 <Cell fill="#9B7FD7" />
                 <Cell fill="#FFA45C" />
               </Pie>
-              <Tooltip />
+              <Tooltip
+              contentStyle={{
+                backgroundColor: "#FFFFFFF0",
+                border: "1px solid #E5E1DA",
+                borderRadius: "8px"
+              }}
+              formatter={(value, name, props) => {
+                const genre = props?.payload?.genre;
+
+                return [`${value}%`, genre];
+              }}
+            />
             </PieChart>
           </ResponsiveContainer>
 
@@ -125,7 +150,19 @@ export function StatisticsChart() {
               <CartesianGrid strokeDasharray="3 3" stroke="#E5E1DA" />
               <XAxis dataKey="tranche" stroke="#8B5E3C" />
               <YAxis stroke="#8B5E3C" />
-              <Tooltip formatter={(value) => value.toLocaleString()} />
+              <Tooltip contentStyle={{
+                  backgroundColor: "#FFFFFFF0",
+                  border: "1px solid #E5E1DA",
+                  borderRadius: "8px"
+                }}
+                labelFormatter={(label) => label}
+                formatter={(value) => {
+                  return [
+                    typeof value === "number" ? value.toLocaleString() : value,
+                    "Nombre"
+                  ];
+                }}
+              />
               <Bar dataKey="nombre">
                 <Cell fill="#9B7FD7" />
                 <Cell fill="#FFA45C" />
