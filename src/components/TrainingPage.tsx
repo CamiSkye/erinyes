@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 import { Card, CardContent, CardDescription, CardHeader, CardTitle,} from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { PlayCircle, Clock, BookOpen, Shield, Heart } from "lucide-react";
+import { PlayCircle, Clock, BookOpen, Shield } from "lucide-react";
 
 export function TrainingPage() {
   const [isQuizOpen, setIsQuizOpen] = useState(false);
@@ -180,7 +180,7 @@ export function TrainingPage() {
                     <div className="flex items-start justify-between w-full text-left pr-4">
                       <div className="flex items-start space-x-4 flex-1">
                         <div className="w-12 h-12 bg-[#9B7FD7] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <IconComponent className="h-6 w-6 text-[#9B7FD7]" />
+                          <IconComponent className="h-6 w-6 text-white" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="text-lg font-semibold text-[#8B5E3C] mb-1">{course.title}</h3>

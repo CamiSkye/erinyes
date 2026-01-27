@@ -115,9 +115,7 @@ export function InterventionPage() {
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className={`font-bold mb-2 ${
-                      step.urgent ? 'text-[#FFA45C]' : 'text-[#8B5E3C]'
-                    }`}>
+                    <h3 className="font-bold mb-2 text-[#8B5E3C]">
                       {step.title}
                     </h3>
                     <p className="text-[#6B6B6B]">{step.description}</p>
