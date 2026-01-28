@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { useState, useEffect } from "react";
+import logo from '../assets/Logo_Erinyes.png';
 
 interface NavItem {
   id: string;
@@ -35,7 +36,8 @@ export function Navigation() {
         {/* Logo / Dialog */}
         <Dialog>
           <DialogTrigger asChild>
-            <button className="text-xl font-semibold text-[#8B5E3C] hover:text-[#9B7FD7] transition-colors cursor-pointer">
+            <button className="inline-flex items-center gap-2 text-xl font-semibold text-[#8B5E3C] hover:text-[#9B7FD7] transition-colors cursor-pointer">
+              <img src={logo} alt="Logo Erinyes" className="h-8 w-auto shrink-0"/>
               Erinyes
             </button>
           </DialogTrigger>

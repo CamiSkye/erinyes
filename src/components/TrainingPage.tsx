@@ -49,7 +49,7 @@ export function TrainingPage() {
       ],
       category: "Sensibilisation",
       icon: Shield,
-      url: "https://view.genially.com/6926bbee0e931772919eaa3a/interactive-content-definitions",
+      url: "https://view.genially.com/695fc166846b6e93c8368b09/interactive-content-apprendre-les-vss",
     },
     
     {
@@ -92,7 +92,7 @@ export function TrainingPage() {
       ],
       category: "Éducation",
       icon: BookOpen,
-      url: "https://view.genially.com/6942a528aaa0e433718e8144/presentation-quest-ce-que-les-vss-au-travail-ou-a-ecole",
+      url: "https://view.genially.com/695fc054770a52075d0e46c6/interactive-content-vss-au-travail-etou-a-lecole",
     },
   ];
 
