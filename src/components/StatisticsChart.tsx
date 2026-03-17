@@ -142,7 +142,7 @@ export function StatisticsChart() {
 <Card className="bg-white/95 border-[#E5E1DA]">
   <CardHeader>
     <CardTitle className="text-[#8B5E3C]">
-      Contexte des violences (2025)
+      Contexte des violences sur mineurs (2025)
     </CardTitle>
     <CardDescription className="text-[#6B6B6B]">
       Majoritairement hors cadre familial
