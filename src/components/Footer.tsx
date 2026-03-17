@@ -101,14 +101,25 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Ligne de séparation */}
-        <div className="border-t border-white/20 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-white/80 text-sm mb-4 md:mb-0">
-              © {currentYear} Erinyes. Tous droits réservés.
-            </div>
-          </div>
-        </div>
+{/* Ligne de séparation */}
+<div className="border-t border-white/20 mt-8 pt-8">
+  <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+    
+    <div className="text-white/80 text-sm">
+      © {currentYear} Erinyes. Tous droits réservés.
+    </div>
+
+    <div className="flex gap-4 text-sm text-white/80">
+      <NavLink
+        to="/mentions-legales"
+        className="hover:text-white transition-colors"
+      >
+        Mentions légales
+      </NavLink>
+    </div>
+
+  </div>
+</div>
 
         {/* Message important */}
         <div className="mt-6 p-4 bg-[#FFA45C] bg-opacity-20 rounded-lg">
