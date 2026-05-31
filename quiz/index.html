@@ -1,172 +1,128 @@
 <!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Sensibilisation aux Violences Sexistes et Sexuelles</title>
-    <style>
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Sensibilisation aux VSS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .site-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
 
-        /* Header, logo and animations */
-        .site-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+    .logo {
+      height: 120px;
+      width: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: float 4s ease-in-out infinite;
+    }
 
-        .logo {
-            height: 120px; /* taille augmentée */
-            max-height: 140px;
-            width: auto;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            animation: float 4s ease-in-out infinite;
-        }
+    @keyframes float {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
 
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(0); }
-        }
+    .shimmer {
+      position: relative;
+      color: #2d3748;
+      font-size: 32px;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+    }
 
-        /* Shimmer effect for the main title */
-        .shimmer {
-            position: relative;
-            color: #2d3748;
-            font-size: 32px;
-            margin: 0;
-            text-align: center;
-            overflow: hidden;
-        }
+    .shimmer::after {
+      content: "";
+      position: absolute;
+      left: -120%;
+      top: 0;
+      height: 100%;
+      width: 120%;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-20deg);
+      animation: shimmer 2.2s infinite;
+    }
 
-        .shimmer::after {
-            content: "";
-            position: absolute;
-            left: -120%;
-            top: 0;
-            height: 100%;
-            width: 120%;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-20deg);
-            animation: shimmer 2.2s infinite;
-        }
+    @keyframes shimmer {
+      0%   { left: -120%; }
+      100% { left: 220%; }
+    }
 
-        @keyframes shimmer {
-            0% { left: -120%; }
-            100% { left: 220%; }
-        }
+    .quiz-cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
-        /* Slight extra motion on cards */
-        .quiz-card { 
-            transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease, border-color 0.35s ease;
-        }
+    .quiz-card {
+      flex: 1;
+      min-width: 280px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 30px;
+      border-left: 5px solid #764ba2;
+      text-decoration: none;
+      transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s ease;
+    }
 
-        .quiz-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 18px 30px rgba(0,0,0,0.15);
-            border-left-color: #667eea;
-        }
+    .quiz-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.15);
+      border-left-color: #667eea;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            margin: 40px auto;
-        }
+    .quiz-card h2 {
+      color: #764ba2;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
 
-        h1 {
-            color: #2d3748;
-            font-size: 32px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+    .quiz-card p {
+      color: #4a5568;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
 
-        .quiz-cards {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+    .start-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+    }
 
-        .quiz-card {
-            flex: 1;
-            min-width: 280px;
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 30px;
-            border-left: 5px solid #764ba2;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .quiz-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .quiz-card h2 {
-            color: #764ba2;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .quiz-card p {
-            color: #4a5568;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .start-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: opacity 0.3s ease;
-        }
-
-        .start-btn:hover {
-            opacity: 0.9;
-        }
-
-    </style>
+    .start-btn:hover { opacity: 0.9; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="site-header">
-            <img src="img/Design%20sans%20titre%20(1).png" alt="Logo du groupe" class="logo">
-            <h1 class="shimmer">Quiz de Sensibilisation aux VSS</h1>
-        </header>
-        <div class="quiz-cards">
-            <a href="code.html" class="quiz-card">
-                <h2>Quiz Général</h2>
-                <p>Testez vos connaissances sur les Violences Sexistes et Sexuelles à travers une série de questions à choix multiples.</p>
-                <div class="start-btn">Commencer le quiz</div>
-            </a>
-            <a href="vraioufaux.html" class="quiz-card">
-                <h2>Info ou intox ?</h2>
-                <p>Évaluez votre compréhension des situations de violence à travers des questions vrai/faux.</p>
-                <div class="start-btn">Commencer le quiz</div>
-            </a>
-        </div>
+  <div class="container">
+    <header class="site-header">
+      <img src="img/Design%20sans%20titre%20(1).png" alt="Logo" class="logo">
+      <h1 class="shimmer">Quiz de Sensibilisation aux VSS</h1>
+    </header>
+    <div class="quiz-cards">
+      <a href="general.html" class="quiz-card">
+        <h2>Quiz Général</h2>
+        <p>Testez vos connaissances sur les Violences Sexistes et Sexuelles à travers une série de questions à choix multiples.</p>
+        <div class="start-btn">Commencer le quiz</div>
+      </a>
+      <a href="vraioufaux.html" class="quiz-card">
+        <h2>Info ou intox ?</h2>
+        <p>Évaluez votre compréhension des situations de violence à travers des questions vrai/faux.</p>
+        <div class="start-btn">Commencer le quiz</div>
+      </a>
     </div>
+  </div>
 </body>
 </html>

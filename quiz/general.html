@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Général — VSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- ÉCRAN D'ACCUEIL -->
+    <div id="welcome-screen">
+      <div class="warning-banner">
+        <p>⚠️ Ce quiz aborde des sujets sensibles liés aux Violences Sexuelles et Sexistes. Si vous vous sentez mal à l'aise, n'hésitez pas à faire une pause.</p>
+      </div>
+      <h1>Quiz de Sensibilisation aux Violences Sexuelles et Sexistes</h1>
+      <p class="intro">Ce quiz éducatif vise à sensibiliser sur les réalités des violences sexuelles et sexistes dans le monde du travail et les espaces publics et privés.</p>
+      <button class="btn" id="start-btn">Commencer le Quiz</button>
+    </div>
+
+    <!-- QUIZ -->
+    <div id="quiz-section" style="display:none;">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+      <div class="question-container" id="question-container">
+        <div class="question-header">
+          <div class="question-number" id="question-number"></div>
+          <div class="question-text" id="question-text"></div>
+        </div>
+        <div class="options" id="options"></div>
+        <div class="explanation" id="explanation">
+          <h3>💡 Le saviez-vous ?</h3>
+          <p id="explanation-text"></p>
+        </div>
+        <button class="btn" id="next-btn" style="display:none;">Question Suivante</button>
+      </div>
+    </div>
+
+    <!-- RÉSULTATS -->
+    <div id="results" style="display:none; text-align:center;">
+      <h1>Quiz Terminé !</h1>
+      <div class="score" id="score"></div>
+      <p style="font-size:18px; color:#4a5568; margin-bottom:30px;">Merci d'avoir participé à ce quiz de sensibilisation.</p>
+
+      <div class="stats-section">
+        <h2>📊 Statistiques Clés sur les Violences Sexuelles</h2>
+        <div class="stat-item">
+          <h3>Dans le monde du travail</h3>
+          <p>En France, 1 femme sur 3 a été victime de harcèlement sexuel au travail. Seulement 5% des victimes portent plainte par peur des représailles professionnelles.</p>
+        </div>
+        <div class="stat-item">
+          <h3>Dans les espaces publics</h3>
+          <p>81% des femmes ont été victimes de harcèlement sexuel dans l'espace public. 87% des utilisatrices de transports en commun ont subi au moins une forme de harcèlement.</p>
+        </div>
+        <div class="stat-item">
+          <h3>Les hommes aussi sont concernés</h3>
+          <p>1 homme sur 6 a été victime de violences sexuelles au cours de sa vie. Ils représentent environ 10% des victimes mais en parlent encore moins.</p>
+        </div>
+        <div class="stat-item">
+          <h3>Dans la sphère privée</h3>
+          <p>94 000 femmes sont victimes de viol ou tentative de viol chaque année en France. Dans 91% des cas, l'agresseur est connu de la victime.</p>
+        </div>
+        <div class="stat-item">
+          <h3>Impact psychologique</h3>
+          <p>Les victimes ont 4 fois plus de risques de développer un syndrome de stress post-traumatique. 59% développent des troubles anxieux.</p>
+        </div>
+      </div>
+
+      <div class="warning-places">
+        <h3>⚠️ Lieux et Situations à Risque</h3>
+        <ul>
+          <li><strong>Transports en commun :</strong> Aux heures de pointe et tard le soir. Privilégiez les wagons avec d'autres passagers.</li>
+          <li><strong>Parkings isolés :</strong> Surtout les parkings souterrains et mal éclairés.</li>
+          <li><strong>Soirées professionnelles :</strong> Les événements d'entreprise avec alcool peuvent créer des situations à risque.</li>
+          <li><strong>Espaces de travail isolés :</strong> Bureaux vides, salles de réunion fermées. Privilégiez les espaces ouverts.</li>
+          <li><strong>Festivals et événements bondés :</strong> Restez en groupe et établissez un point de rendez-vous.</li>
+          <li><strong>Applications de rencontre :</strong> Premiers rendez-vous dans des lieux publics, informez un proche de votre localisation.</li>
+        </ul>
+      </div>
+
+      <div class="help-resources">
+        <h3>🆘 Ressources d'Aide</h3>
+        <p><strong>3919 - Violences Femmes Info :</strong> Numéro gratuit et anonyme, 7j/7</p>
+        <p><strong>17 ou 112 :</strong> En cas d'urgence, contactez la police ou la gendarmerie</p>
+        <p><strong>116 006 :</strong> Numéro d'aide aux victimes, gratuit et confidentiel</p>
+        <p><strong>Plateforme <a href="https://arretonslesviolences.gouv.fr/" target="_blank" rel="noopener noreferrer" style="color:#234e52;">arretonslesviolences.gouv.fr</a> :</strong> Signalement en ligne 24h/24</p>
+      </div>
+
+      <div class="sources">
+        <h3>📚 Sources</h3>
+        <ul>
+          <li>Enquête IFOP pour la Fondation Jean Jaurès (2018)</li>
+          <li>Haut Conseil à l'Égalité entre les femmes et les hommes (2015)</li>
+          <li>Ministère de l'Intérieur — SSMSI (2022)</li>
+          <li>Enquête Virage — INED (2015)</li>
+          <li>OMS — Rapport sur les violences sexuelles (2021)</li>
+          <li>Collectif #NousToutes</li>
+        </ul>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn" onclick="location.reload()">Recommencer le Quiz</button>
+        <button class="btn" onclick="window.location.href='index.html'">Retour à l'accueil</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="general.js"></script>
+</body>
+</html>

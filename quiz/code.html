@@ -12,7 +12,7 @@
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100%;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -29,6 +29,8 @@
       border-radius: 20px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       padding: 40px;
+      /* ✅ FIX : espace en bas pour que le bouton ne touche pas la bordure */
+      padding-bottom: 60px;
       margin: 40px auto;
     }
 
@@ -289,6 +291,8 @@
       height: 8px;
       background: #e2e8f0;
       border-radius: 10px;
+      /* ✅ FIX : espace au dessus pour que la barre ne touche pas le bord */
+      margin-top: 30px;
       margin-bottom: 30px;
       overflow: hidden;
     }
@@ -335,9 +339,12 @@
      <p id="warning-text">⚠️ Ce quiz aborde des sujets sensibles liés aux Violences Sexuelles et Sexistes. Si vous vous sentez mal à l'aise, n'hésitez pas à faire une pause.</p>
     </div>
     <h1 id="main-title">Quiz de Sensibilisation aux Violences Sexuelles et Sexistes</h1>
-    <p class="intro" id="intro-paragraph">Ce quiz éducatif vise à sensibiliser sur les réalités des violences sexuelles et sexistes dans le monde du travail et les espaces publics et privés. Testez vos connaissances et découvrez des statistiques importantes.</p><button class="btn" id="start-btn">Commencer le Quiz</button>
+    <p class="intro" id="intro-paragraph">Ce quiz éducatif vise à sensibiliser sur les réalités des violences sexuelles et sexistes dans le monde du travail et les espaces publics et privés. Testez vos connaissances et découvrez des statistiques importantes.</p>
+    <button class="btn" id="start-btn">Commencer le Quiz</button>
    </div>
-   <div id="quiz-section">
+
+   <div id="quiz-section" style="display:none;">
+    <!-- ✅ La barre est maintenant DANS quiz-section, pas dans welcome-screen -->
     <div class="progress-bar">
      <div class="progress-fill" id="progress"></div>
     </div>
@@ -350,9 +357,11 @@
      <div class="explanation" id="explanation">
       <h3>💡 Le saviez-vous ?</h3>
       <p id="explanation-text"></p>
-     </div><button class="btn" id="next-btn" style="display: none;">Question Suivante</button>
+     </div>
+     <button class="btn" id="next-btn" style="display: none;">Question Suivante</button>
     </div>
    </div>
+
    <div class="results" id="results">
     <h1>Quiz Terminé !</h1>
     <div class="score" id="score"></div>
@@ -397,7 +406,7 @@
      <p><strong>17 ou 112 :</strong> En cas d'urgence, contactez la police ou la gendarmerie</p>
      <p><strong>116 006 :</strong> Numéro d'aide aux victimes, gratuit et confidentiel</p>
      <p><strong>01 45 84 24 24 :</strong> SOS Viols Femmes Informations, du lundi au vendredi de 10h à 19h</p>
-     <p><strong>Plateforme arretonslesviolences.gouv.fr :</strong> Signalement en ligne disponible 24h/24</p>
+     <p><strong>Plateforme <a href="https://arretonslesviolences.gouv.fr/" target="_blank" rel="noopener noreferrer" style="color:#234e52;">arretonslesviolences.gouv.fr</a> :</strong> Signalement en ligne disponible 24h/24</p>
     </div>
     <div class="sources">
      <h3>📚 Sources</h3>
@@ -409,13 +418,14 @@
       <li>Organisation Mondiale de la Santé (OMS) - Rapport sur les violences sexuelles (2021)</li>
       <li>Collectif #NousToutes - Observatoire des violences faites aux femmes</li>
      </ul>
-  </div>
-  <div style="text-align: center; margin-top: 20px;">
-   <button class="btn" onclick="location.reload()">Recommencer le Quiz</button>
-   <button class="btn" onclick="window.location.href='index.html'" style="margin-left:12px;">Retour à l'accueil</button>
-  </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+     <button class="btn" onclick="location.reload()">Recommencer le Quiz</button>
+     <button class="btn" onclick="window.location.href='index.html'" style="margin-left:12px;">Retour à l'accueil</button>
+    </div>
    </div>
   </div>
+
   <script>
     const defaultConfig = {
       quiz_title: "Quiz de Sensibilisation aux Violences Sexuelles et Sexistes",
@@ -573,13 +583,6 @@
       if (progressFill) {
         progressFill.style.background = `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
       }
-
-      const allText = document.querySelectorAll('h1, h2, h3, p, li, .option');
-      allText.forEach(el => {
-        if (!el.classList.contains('selected') && !el.classList.contains('correct') && !el.classList.contains('incorrect')) {
-          el.style.color = textColor;
-        }
-      });
     }
 
     if (window.elementSdk) {
@@ -590,54 +593,33 @@
           recolorables: [
             {
               get: () => config.background_color || defaultConfig.background_color,
-              set: (value) => {
-                config.background_color = value;
-                window.elementSdk.setConfig({ background_color: value });
-              }
+              set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
             },
             {
               get: () => config.surface_color || defaultConfig.surface_color,
-              set: (value) => {
-                config.surface_color = value;
-                window.elementSdk.setConfig({ surface_color: value });
-              }
+              set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
             },
             {
               get: () => config.text_color || defaultConfig.text_color,
-              set: (value) => {
-                config.text_color = value;
-                window.elementSdk.setConfig({ text_color: value });
-              }
+              set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
             },
             {
               get: () => config.primary_action_color || defaultConfig.primary_action_color,
-              set: (value) => {
-                config.primary_action_color = value;
-                window.elementSdk.setConfig({ primary_action_color: value });
-              }
+              set: (value) => { config.primary_action_color = value; window.elementSdk.setConfig({ primary_action_color: value }); }
             },
             {
               get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-              set: (value) => {
-                config.secondary_action_color = value;
-                window.elementSdk.setConfig({ secondary_action_color: value });
-              }
+              set: (value) => { config.secondary_action_color = value; window.elementSdk.setConfig({ secondary_action_color: value }); }
             }
           ],
           borderables: [],
           fontEditable: {
             get: () => config.font_family || defaultConfig.font_family,
-            set: (value) => {
-              config.font_family = value;
-              window.elementSdk.setConfig({ font_family: value });
-            }
+            set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
           },
           fontSizeable: {
             get: () => config.font_size || defaultConfig.font_size,
-            set: (value) => {
-              config.font_size = value;
-              window.elementSdk.setConfig({ font_size: value });
-            }
+            set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
           }
         }),
         mapToEditPanelValues: (config) => new Map([
@@ -660,13 +642,13 @@
     function loadQuestion() {
       answered = false;
       const question = questions[currentQuestion];
-      
+
       document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} sur ${questions.length}`;
       document.getElementById('question-text').textContent = question.question;
-      
+
       const optionsContainer = document.getElementById('options');
       optionsContainer.innerHTML = '';
-      
+
       question.options.forEach((option, index) => {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'option';
@@ -674,21 +656,21 @@
         optionDiv.addEventListener('click', () => selectOption(index));
         optionsContainer.appendChild(optionDiv);
       });
-      
+
       document.getElementById('explanation').style.display = 'none';
       document.getElementById('next-btn').style.display = 'none';
       document.getElementById('question-container').style.display = 'block';
-      
+
       updateProgress();
     }
 
     function selectOption(selectedIndex) {
       if (answered) return;
-      
+
       answered = true;
       const question = questions[currentQuestion];
       const options = document.querySelectorAll('.option');
-      
+
       options.forEach((option, index) => {
         if (index === question.correct) {
           option.classList.add('correct');
@@ -697,11 +679,9 @@
         }
         option.style.cursor = 'default';
       });
-      
-      if (selectedIndex === question.correct) {
-        score++;
-      }
-      
+
+      if (selectedIndex === question.correct) score++;
+
       document.getElementById('explanation-text').textContent = question.explanation;
       document.getElementById('explanation').style.display = 'block';
       document.getElementById('next-btn').style.display = 'block';
@@ -714,7 +694,6 @@
 
     document.getElementById('next-btn').addEventListener('click', () => {
       currentQuestion++;
-      
       if (currentQuestion < questions.length) {
         loadQuestion();
       } else {
@@ -725,10 +704,10 @@
     function showResults() {
       document.getElementById('quiz-section').style.display = 'none';
       document.getElementById('results').style.display = 'block';
-      
+
       const percentage = Math.round((score / questions.length) * 100);
       document.getElementById('score').textContent = `${score}/${questions.length} (${percentage}%)`;
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a32076e009d09e',t:'MTc2MjQxNjc1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </body>
 </html>

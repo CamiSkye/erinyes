@@ -1,0 +1,439 @@
+{
+    "home": {
+    "hero": {
+        "title": "Ton corps, ton choix, ton droit.",
+        "subtitle": "Arrêtons de normaliser la domination et la sexualisation, mais normalisons plutôt le consentement d'autrui.",
+        "message": "Écoutez, comprenez et respectez l'envie et le besoin de chacun.\nQuand c'est non, c'est NON !",
+        "tagline": "Un site de sensibilisation et d'accompagnement\npour lutter contre les Violences Sexistes et Sexuelles."
+    },
+    "about": {
+    "title": "Comprendre les Violences Sexistes et Sexuelles",
+    "whatAre": {
+        "title": "Qu'est-ce que les VSS ?",
+        "content": "Les Violences Sexistes et Sexuelles englobent toutes les formes de violences physiques, psychologiques ou sexuelles exercées en raison du sexe, de l'identité de genre ou de l'orientation sexuelle."
+    },
+    "types": {
+        "title": "Types de violences",
+        "content": "Harcèlement, agression physique ou sexuelle, viol, violences conjugales, cyberharcèlement, discriminations... Chaque forme de violence est grave et inacceptable."
+    },
+    "rights": {
+        "title": "Vos droits",
+        "content": "Vous avez le droit d'être protégé·e, d'être aidé·e et accompagné·e. Personne n'a le droit de porter atteinte à votre intégrité physique ou psychologique."
+    }
+    },
+    "stats": {
+        "title": "Les chiffres qui révèlent l'ampleur du phénomène",
+        "subtitle": "Ces statistiques montrent l'importance de sensibiliser, d'agir et d'accompagner les victimes de violences sexistes et sexuelles."
+    },
+    "charts": {
+        "evolution": {
+        "title": "Évolution 2023 à 2025",
+        "subtitle": "Nombre de victimes de violences sexuelles",
+        "totalVictims": "Victimes totales",
+        "minorVictims": "Victimes mineures"
+        },
+        "gender": {
+        "title": "Répartition par genre (2024)",
+        "subtitle": "Augmentation de 7% par rapport à 2023",
+        "women": "Femmes",
+        "men": "Hommes"
+        },
+        "context": {
+        "title": "Contexte des violences sur mineurs (2025)",
+        "subtitle": "Majoritairement hors cadre familial",
+        "outOfFamily": "Hors famille",
+        "family": "Familial"
+        },
+        "children": {
+        "title": "Victimes mineures par tranche d'âge (2023)",
+        "subtitle": "Répartition des enfants victimes",
+        "count": "Nombre",
+        "ageGroups": ["0-5 ans", "6-11 ans", "12-17 ans"]
+        },
+        "keyFigures": {
+        "title": "Chiffres clés 2024-2025",
+        "subtitle": "Données principales",
+        "victims2025": "victimes en 2025 (+8%)",
+        "minors": "des victimes sont mineures",
+        "women": "des victimes sont des femmes",
+        "outOfFamily": "des violences ont lieu hors cadre familial"
+        }
+    }
+    },
+    "training": {
+    "title": "Formations e-learning",
+    "subtitle": "Développez vos connaissances sur les violences sexistes et sexuelles grâce à nos modules de formation interactifs.",
+    "quizCta": "Mais tout d'abord testez vos connaissances avec ce quiz.",
+    "startQuiz": "Commencer le quiz",
+    "available": "Formations disponibles",
+    "modulesLabel": "Modules de la formation :",
+    "startFormation": "Commencer la formation",
+    "languageNotice": "Cette formation est disponible seulement en français.",
+    "modules": "modules",
+    "sources": {
+        "title": "Sources et ressources.",
+        "initial": "Pour la formation initiale, nous nous appuyons sur :",
+        "advanced": "Pour la formation spécialisée (VSS au travail) : nous nous basons sur une formation \"Harcèlement sexuel : Le guide du RH\"."
+    },
+    "courses": {
+        "course1": {
+        "title": "Reconnaître les violences sexistes et sexuelles",
+        "description": "Apprenez à identifier les différentes formes de VSS et leurs impacts",
+        "modules": [
+            { "title": "Module : Définitions",              "description": "Apprenez les différentes définitions afin de mieux comprendre ce qu'est une Violence Sexiste et Sexuelle." },
+            { "title": "Module : Chiffres Clés",            "description": "Apprenez combien de personnes sont réellement sujettes aux agressions sexuelles et/ou au harcèlement sexuel." },
+            { "title": "Module : Conséquences",             "description": "Repérez les signaux déclencheurs que peuvent montrer les victimes de Violences Sexistes et Sexuelles." },
+            { "title": "Module : Numéros et Associations",  "description": "Apprenez et mémorisez tous les numéros d'urgence utiles pour les victimes d'agressions sexuelles." },
+            { "title": "Module : Que pouvons-nous faire ?", "description": "Apprenez comment agir lorsque vous êtes témoin ou proche d'une victime." }
+        ]
+        },
+        "course2": {
+        "title": "Prévention et sensibilisation en milieu scolaire et monde professionnel",
+        "description": "Outils et méthodes pour éduquer à la prévention des VSS",
+        "modules": [
+            { "title": "Module : Qu'est ce que les VSS à l'école et/ou au travail", "description": "Module qui va vous permettre de reconnaître les différents comportements liés aux VSS à l'école ou au travail." },
+            { "title": "Module : Le Harcèlement au travail... En réalité ?",        "description": "Ce module permet de déconstruire les idées reçues et de comprendre ce qu'est réellement le harcèlement au travail." },
+            { "title": "Module : Comment réagir si on est victime ... ?",           "description": "Dans ce module vous trouverez tout ce que vous devez savoir si un jour vous êtes victime de VSS au travail." },
+            { "title": "Module : Comment réagir si on est témoin ... ?",            "description": "Ce module donne les clés pour reconnaître une situation problématique et agir en tant que témoin face aux VSS." },
+            { "title": "Module : Et le cadre légal ?",                              "description": "À travers un quiz interactif, ce module permet de mieux comprendre le cadre légal des VSS." }
+        ]
+        }
+    },
+    "levels": {
+        "Débutant": "Débutant",
+        "Avancé": "Avancé"
+    },
+    "categories": {
+        "Sensibilisation": "Sensibilisation",
+        "Éducation": "Éducation"
+    }
+    },
+    "intervention": {
+    "title": "Comment intervenir en sécurité",
+    "subtitle": "Apprenez les techniques d'intervention sécurisées, les étapes à suivre et les codes secrets pour aider les victimes de VSS.",
+    "menu": {
+        "method3d": "Méthode 3D",
+        "whatToDo": "Que faire ?",
+        "codes": "Codes secrets"
+    },
+    "method3d": {
+        "title": "Méthode des 3D - Comment intervenir en sécurité",
+        "intro": "Ces techniques visent à agir sans mettre en danger sa propre sécurité :",
+        "delegate": { "label": "DÉLÉGUER",  "description": "Alerter un responsable, contacter la sécurité ou les secours" },
+        "distract": { "label": "DÉTOURNER", "description": "Interrompre la scène par une question anodine, une distraction" },
+        "dialogue": { "label": "DIALOGUER", "description": "Si la situation le permet, parler directement à l'agresseur ou à la victime" }
+    },
+    "whatToDo": {
+        "title": "Que faire étape par étape ?",
+        "steps": [
+        { "title": "Assurer la sécurité immédiate", "description": "Si vous sentez une victime en danger, intervenez sans vous mettre en danger ou faites diversion (demandez l'heure, interpellez comme si vous la connaissiez). Sinon, appelez le 17 ou envoyez un SMS au 114." },
+        { "title": "Soutenir la victime", "description": "Restez avec la victime, demandez-lui si elle va bien et écoutez-la sans juger. Ne minimisez pas ce qu'elle vient de vivre. Rassurez-la en lui disant qu'elle n'est pas seule." },
+        { "title": "Ne pas confronter l'agresseur", "description": "Vous n'avez pas à jouer les héros. Protégez la victime et recueillez les éléments utiles (lieu, description, heure) pour prévenir les autorités." },
+        { "title": "Proposer de l'aide concrète", "description": "Accompagnez la victime pour porter plainte, voir un médecin ou appeler le 3919 ou le 17. Proposez de témoigner si vous avez vu ou entendu les faits." },
+        { "title": "Signaler les faits", "description": "Dans les transports : bouton d'alerte, agents SNCF/RATP, app 'STOP Harcèlement'. À l'université/travail : direction ou référent égalité. En ligne : Pharos (internet-signalement.gouv.fr)." }
+        ]
+    },
+    "codes": {
+        "title": "Codes secrets et signaux discrets",
+        "angelShot": {
+        "title": "Angel Shot – C'est quoi ?",
+        "subtitle": "Le \"Angel Shot\" est un code discret utilisé principalement dans les bars et les boîtes de nuit. Il permet à une personne de signaler au personnel qu'elle est en danger ou mal à l'aise, sans alerter l'agresseur potentiel.",
+        "neat": { "label": "\"Angel shot neat\"",      "description": "Demande de raccompagnement à sa voiture" },
+        "ice":  { "label": "\"Angel shot with ice\"",  "description": "Demande à ce qu'on appelle un taxi ou Uber" },
+        "lime": { "label": "\"Angel shot with lime\"", "description": "Demande à ce qu'on appelle la police" }
+        },
+        "angela": {
+        "title": "Demander \"Angela\"",
+        "description": "Système mis en place initialement au Royaume-Uni (\"Ask for Angela\") pour protéger contre le harcèlement de rue.",
+        "phrase": "💬 \"Est-ce qu'Angela est là ?\"",
+        "content": "Si vous vous sentez en danger ou que vous êtes harcelé dans la rue, posez cette question dans un commerce, un restaurant ou un lieu culturel (identifiable par un macaron violet). Cela déclenche une procédure d'aide."
+        },
+        "apps": {
+        "title": "Applications d'urgence",
+        "content": "Certaines applis permettent de prévenir un contact de confiance, appeler les secours ou envoyer sa localisation. Sur Android vous pouvez appuyer cinq fois rapidement sur le bouton marche/arrêt pour déclencher automatiquement un appel aux secours. L'application Urgences sur iPhone permet d'appeler rapidement les services d'urgence et de partager automatiquement vos informations médicales vitales en cas de besoin."
+        },
+        "hand": {
+        "title": "Signe de la main en détresse",
+        "content": "Un geste international reconnu pour alerter discrètement :",
+        "steps": ["Paume tournée vers l'extérieur", "Plier le pouce dans la paume", "Refermer les doigts dessus"],
+        "usagesTitle": "⚠️ Utilisations",
+        "usages": ["Appels vidéo", "Alerter discrètement", "Se sentir menacer", "Violence domestique", "Tentative d'enlèvement"],
+        "saved": "Ce signe a déjà sauvé plusieurs victimes !"
+        }
+    },
+    "cta": {
+        "title": "Agir en sécurité, c'est sauver des vies",
+        "content": "Chaque intervention peut faire la différence. N'hésitez pas à utiliser ces techniques et à diffuser ces informations autour de vous."
+    }
+    },
+    "resources": {
+    "title": "Ressources et aide",
+    "subtitle": "Trouvez ici toutes les ressources pour vous aider ou aider une personne victime de violences sexistes et sexuelles.",
+    "menu": {
+        "emergency": "Numéros d'urgence",
+        "associations": "Associations",
+        "legal": "Cadre légal"
+    },
+    "free": "Gratuit",
+    "services": "Services proposés :",
+    "sections": {
+        "emergency": "Numéros d'urgence",
+        "associations": "Associations d'aide aux victimes",
+        "legal": "Cadre légal"
+    },
+    "legal": {
+        "definitions": "Définitions légales",
+        "penalties": "Peines encourues",
+        "harassment": {
+        "label": "Harcèlement sexuel",
+        "definition": "Propos ou comportements à connotation sexuelle répétés portant atteinte à la dignité (art. 222-33 du Code pénal)",
+        "penalty": "2 ans d'emprisonnement et 30 000€ d'amende (aggravé : 3 ans et 45 000€)"
+        },
+        "assault": {
+        "label": "Agression sexuelle",
+        "definition": "Atteinte sexuelle commise avec violence, contrainte, menace ou surprise (art. 222-22 du Code pénal)",
+        "penalty": "5 ans d'emprisonnement et 75 000€ d'amende (aggravé : 7 ans et 100 000€)"
+        },
+        "rape": {
+        "label": "Viol",
+        "definition": "Acte de pénétration sexuelle commis avec violence, contrainte, menace ou surprise (art. 222-23 du Code pénal)",
+        "penalty": "15 ans de réclusion criminelle (aggravé : 20 ans)"
+        }
+    },
+    "emergencyNumbers": [
+        { "number": "3919",  "name": "Violences Sexistes et Sexuelles",    "description": "Numéro national d'information destiné aux femmes victimes de violences",                                                                                          "hours": "24h/24 - 7j/7" },
+        { "number": "17",    "name": "Police et Gendarmerie",               "description": "Pour signaler une urgence ou porter plainte",                                                                                                                        "hours": "24h/24 - 7j/7" },
+        { "number": "114",   "name": "Personnes sourdes/malentendantes",    "description": "Numéro d'urgence par SMS pour les personnes sourdes et malentendantes",                                                                                              "hours": "24h/24 - 7j/7" },
+        { "number": "15",    "name": "Urgences médicales (SAMU)",           "description": "Pour toute urgence médicale nécessitant une intervention rapide",                                                                                                    "hours": "24h/24 - 7j/7" },
+        { "number": "18",    "name": "Pompiers",                            "description": "Pour les urgences incendie, accidents et secours à personnes",                                                                                                       "hours": "24h/24 - 7j/7" },
+        { "number": "112",   "name": "Services d'urgence européens",        "description": "Numéro d'urgence européen pour toutes situations d'urgence",                                                                                                         "hours": "24h/24 - 7j/7" },
+        { "number": "119",   "name": "Allo Enfance maltraitée",             "description": "Numéro national pour signaler un enfant en danger ou victime de maltraitance, permettant un suivi et une intervention des services sociaux ou judiciaires.",         "hours": "24h/24 - 7j/7" },
+        { "number": "3114",  "name": "Prévention Suicide",                  "description": "Si vous êtes en détresse et/ou avez des pensées suicidaires, si vous voulez aider une personne en souffrance, contacter le numéro national de prévention du suicide.", "hours": "24h/24 - 7j/7" }
+    ],
+    "associations": [
+        {
+        "name": "Fédération nationale solidarité femmes (FNSF)",
+        "description": "Réseau national d'associations spécialisées dans l'accueil des femmes victimes de violences",
+        "website": "solidaritefemmes.org",
+        "services": ["Hébergement d'urgence", "Accompagnement social", "Aide juridique"]
+        },
+        {
+        "name": "FN CIDFF",
+        "description": "Fédération nationale des Centres d'Information sur les Droits des Femmes et des Familles",
+        "website": "fncidff.info",
+        "services": ["Information juridique", "Accompagnement", "Accès aux droits"]
+        },
+        {
+        "name": "Collectif Féministe Contre le Viol (CFCV)",
+        "description": "Association de lutte contre les violences sexuelles",
+        "phone": "0 800 05 95 95",
+        "website": "cfcv.asso.fr",
+        "services": ["Écoute", "Accompagnement juridique", "Groupes de parole"]
+        },
+        {
+        "name": "SOS Hommes Battus",
+        "description": "Association d'aide aux hommes victimes de violences conjugales",
+        "website": "soshommesbattus.org",
+        "services": ["Écoute téléphonique", "Accompagnement", "Information"]
+        },
+        {
+        "name": "AVFT",
+        "description": "Association européenne contre les Violences faites aux Femmes au Travail",
+        "website": "avft.org",
+        "services": ["Accompagnement juridique", "Information", "Prévention"]
+        }
+    ],
+    "violentometre": {
+        "alt": "Violentomètre",
+        "altZoom": "Violentomètre zoom"
+    }
+    },
+    "posters": {
+    "title": "Affiches de sensibilisation",
+    "subtitle": "Téléchargez gratuitement nos affiches de sensibilisation\npour diffuser les messages de prévention des VSS.",
+    "search": "Rechercher une affiche...",
+    "download": "Télécharger",
+    "downloadAll": "Télécharger le pack complet",
+    "previewTitle": "Aperçu de l'affiche",
+    "noResults": "Aucune affiche trouvée pour votre recherche.",
+    "available": "Affiches disponibles",
+    "categoriesCount": "Catégories",
+    "format": "Format",
+    "linkCopied": "Lien copié dans le presse-papiers !",
+    "violentometre": {
+        "title": "Violentomètre",
+        "subtitle": "Outil pour mesurer si votre relation est saine ou dangereuse",
+        "launch": "Lancer le quiz",
+        "close": "Fermer le quiz",
+        "call": "3919 - Violences Info"
+    },
+    "cta": {
+        "title": "Diffusez les messages de prévention",
+        "content": "Imprimez et diffusez ces affiches dans vos locaux, écoles, associations ou espaces publics pour sensibiliser le plus grand nombre aux violences sexistes et sexuelles."
+    },
+    "categories": [
+        { "value": "all",             "label": "Toutes les catégories" },
+        { "value": "Sensibilisation", "label": "Sensibilisation"       },
+        { "value": "Information",     "label": "Information"           }
+    ],
+    "items": [
+        { "title": "Erinyes - Statistiques VSS",  "description": "Affiche général et informative sur les Violences Sexistes et Sexuelles.",                                                                                    "category": "Sensibilisation", "format": "A3", "size": "510 Ko"  },
+        { "title": "Le Consentement",             "description": "Si tu ne sais pas ce que veux dire le consentement ou que tu n'es pas sûr, cette affiche est là pour t'aider.",                                            "category": "Sensibilisation", "format": "A3", "size": "623 Ko"  },
+        { "title": "Que dois-je faire ?",         "description": "Voici les quatre étapes à suivre si tu es témoin d'une Violence Sexiste et Sexuelle.",                                                                       "category": "Sensibilisation", "format": "A3", "size": "787 Ko"  },
+        { "title": "Angel Shot",                  "description": "Voici un code que tu peux utiliser lors d'une de tes soirées dans un bar. Tous les bars de France connaissent ce dispositif.",                              "category": "Information",     "format": "A3", "size": "1.6 Mo"  },
+        { "title": "Numéros d'urgence",           "description": "Les numéros à contacter si jamais tu te sens en danger.",                                                                                                    "category": "Information",     "format": "A3", "size": "412 Ko"  },
+        { "title": "Associations",                "description": "Voici certaines associations qui peuvent t'aider dans tes démarches et suivant ce que tu recherches.",                                                        "category": "Information",     "format": "A4", "size": "3.7 MB"  }
+    ]
+    },
+    "violentometre": {
+    "zones": {
+        "green":  { "label": "PROFITE",                    "description": "Ta relation est saine quand il..."  },
+        "yellow": { "label": "VIGILANCE, DIS STOP !",      "description": "Il y a violence quand il..."        },
+        "red":    { "label": "PROTÈGE-TOI, DEMANDE DE L'AIDE", "description": "Tu es en danger quand il..."   }
+    },
+    "phrasesLabel": "Phrases à placer :",
+    "verify": "Vérifier",
+    "success": "Félicitations ! Tu as réussi à placer tous les items au bon endroit ! Tu peux télécharger le Violentomètre en PDF si tu le souhaites.",
+    "downloadBtn": "Télécharger le Violentomètre",
+    "items": {
+        "green": [
+        "Respecte tes décisions et tes goûts",
+        "Accepte tes ami.e.s et ta famille",
+        "A confiance en toi",
+        "Est content quand tu te sens épanouie",
+        "S'assure de ton accord pour ce que vous faites ensemble"
+        ],
+        "yellow": [
+        "Te fait du chantage si tu refuses de faire quelque chose",
+        "Rabaisse tes opinions et tes projets",
+        "Se moque de toi en public",
+        "Est jaloux et possessif en permanence",
+        "Te manipule",
+        "Contrôle tes sorties, habits, maquillage",
+        "Fouille tes textos, mails, applis",
+        "Insiste pour que tu lui envoies des photos intimes",
+        "T'isole de ta famille et de tes proches",
+        "T'oblige à regarder des films pornos"
+        ],
+        "red": [
+        "T'humilie et te traite de folle quand tu lui fais des reproches",
+        "\"Pète les plombs\" lorsque quelque chose lui déplaît",
+        "Menace de se suicider à cause de toi",
+        "Menace de diffuser des photos intimes de toi",
+        "Te pousse, te tire, te gifle, te secoue, te frappe",
+        "Te touche les parties intimes sans ton consentement",
+        "T'oblige à avoir des relations sexuelles",
+        "Te menace avec une arme"
+        ]
+    }
+    },
+    "cookies": {
+    "text": "Ce site utilise des cookies (via des services tiers comme les vidéos) afin d'améliorer votre expérience.",
+    "accept": "Accepter",
+    "refuse": "Refuser"
+    },
+    "footer": {
+    "about": "Site de sensibilisation et d'accompagnement pour lutter contre les violences sexistes et sexuelles.",
+    "quote": "\"Arrêtons de normaliser la domination et la sexualisation, mais normalisons plutôt le consentement d'autrui.\"",
+    "nav": "Navigation",
+    "emergency": "Urgences",
+    "resources": "Ressources utiles",
+    "copyright": "Tous droits réservés.",
+    "legal": "Mentions légales",
+    "warning": "Si vous êtes en danger immédiat, appelez le 17 (police/gendarmerie) ou le 112 (urgences européennes). Ce site ne remplace pas une aide professionnelle.",
+    "quickLinks": [
+        { "name": "Accueil",      "to": "/" },
+        { "name": "Formations",   "to": "/formations" },
+        { "name": "Intervention", "to": "/interventions" },
+        { "name": "Ressources",   "to": "/ressources" },
+        { "name": "Médias",       "to": "/affiches" }
+    ],
+    "emergencyNumbers": [
+        { "name": "3919 - Violences sexistes et sexuelles", "number": "3919" },
+        { "name": "112 - Services d'urgence européens",     "number": "112"  },
+        { "name": "114 - Personnes sourdes/malentendantes", "number": "114"  },
+        { "name": "17 - Police/Gendarmerie",                "number": "17"   },
+        { "name": "15 - SAMU",                              "number": "15"   }
+    ],
+    "resourceLinks": [
+        { "name": "FNSF - Solidarité Femmes",          "href": "https://solidaritefemmes.org/" },
+        { "name": "FN CIDFF",                           "href": "https://fncidff.info/"         },
+        { "name": "Collectif Féministe Contre le Viol", "href": "https://cfcv.asso.fr/"         },
+        { "name": "SOS Hommes Battus",                  "href": "https://soshommesbattus.org/"  }
+    ],
+    "brandName": "Erinyes",
+    "important": "Important :"
+    },
+    "nav": {
+    "logoAlt": "Logo Erinyes",
+    "brandName": "Erinyes",
+    "whoAreWe": "Qui sommes-nous ?",
+    "about": {
+        "p1": "Erinyes est un site web de sensibilisation dédié à la lutte contre les violences sexistes et sexuelles (VSS). Notre mission est de briser le silence, d'informer et d'accompagner les victimes vers les ressources d'aide appropriées.",
+        "p2": "Dans la mythologie grecque, les Érinyes étaient les déesses de la vengeance qui poursuivaient les criminels et veillaient à ce que justice soit rendue. Aujourd'hui, nous portons ce nom symbolique pour défendre les victimes et lutter contre l'impunité.",
+        "quote": "\"Arrêtons de normaliser la domination et la sexualisation, mais normalisons plutôt le consentement d'autrui. Écoutez, comprenez et respectez l'envie et le besoin de chacun. Quand c'est non, c'est NON !\"",
+        "p3": "Notre plateforme propose des statistiques actualisées, des ressources d'aide, des formations de sensibilisation et des outils de prévention pour contribuer à un monde sans violences sexistes et sexuelles."
+    },
+    "links": [
+        { "id": "accueil",      "label": "Accueil",       "to": "/"             },
+        { "id": "formations",   "label": "Formations",    "to": "/formations"   },
+        { "id": "intervention", "label": "Intervention",  "to": "/interventions"},
+        { "id": "ressources",   "label": "Ressources",    "to": "/ressources"   },
+        { "id": "medias",       "label": "Médias",        "to": "/affiches"     }
+    ]
+    },
+    "quickExit": {
+    "label": "Sortie rapide",
+    "ariaLabel": "Sortie rapide",
+    "tooltip": "⚠️ Attention, bouton de sortie rapide du site : vous serez redirigé vers Google, pensez à supprimer votre historique si nécessaire !",
+    "redirectUrl": "https://www.google.com"
+    },
+     "legal": {
+    "title": "Mentions légales",
+
+    "editor": {
+      "title": "Éditrice du site",
+      "name": "Camille Lacroix, développeuse web, responsable du projet Erinyes",
+      "contact": "Contact"
+    },
+
+    "hosting": {
+      "title": "Hébergement",
+      "company": "Netlify, Inc.",
+      "address1": "44 Montgomery Street, Suite 300",
+      "address2": "San Francisco, CA 94104",
+      "country": "États-Unis",
+      "website": "Site"
+    },
+
+    "intellectualProperty": {
+      "title": "Propriété intellectuelle",
+      "paragraph1": "Les contenus présents sur le site Erinyes (textes, formations, vidéos, ressources, structure) sont protégés par le droit de la propriété intellectuelle.",
+      "paragraph2": "Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite."
+    },
+
+    "personalData": {
+      "title": "Données personnelles",
+      "paragraph1": "Le site ne collecte pas directement de données personnelles.",
+      "paragraph2": "Cependant, certains contenus intégrés (notamment des vidéos YouTube) peuvent collecter des données via des cookies ou des traceurs.",
+      "paragraph3": "Ces traitements relèvent de la responsabilité des services tiers concernés."
+    },
+
+    "cookies": {
+      "title": "Cookies",
+      "paragraph1": "Le site peut utiliser des cookies via des services tiers afin d'assurer le bon fonctionnement des contenus intégrés.",
+      "paragraph2": "Vous pouvez configurer votre navigateur pour refuser les cookies."
+    },
+
+    "liability": {
+      "title": "Responsabilité",
+      "paragraph1": "Le site Erinyes propose des contenus à vocation informative et de sensibilisation.",
+      "paragraph2": "Les informations diffusées ne remplacent pas l'avis d'un professionnel.",
+      "paragraph3": "Le site peut contenir des liens vers des ressources externes (associations, numéros d'aide, etc.). L'éditrice du site ne peut être tenue responsable du contenu de ces ressources."
+    },
+
+    "contact": {
+      "title": "Contact"
+    }
+  }
+}

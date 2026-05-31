@@ -1,0 +1,439 @@
+{
+  "home": {
+    "hero": {
+      "title": "Your body, your choice, your right.",
+      "subtitle": "Let's stop normalizing domination and sexualization, and instead normalize the consent of others.",
+      "message": "Listen, understand and respect the desires and needs of each person.\nWhen it's no, it's NO!",
+      "tagline": "A awareness and support website\nto fight against Gender-Based and Sexual Violence."
+    },
+    "about": {
+      "title": "Understanding Gender-Based and Sexual Violence",
+      "whatAre": {
+        "title": "What is GBSV?",
+        "content": "Gender-Based and Sexual Violence encompasses all forms of physical, psychological or sexual violence exercised on the basis of sex, gender identity or sexual orientation."
+      },
+      "types": {
+        "title": "Types of violence",
+        "content": "Harassment, physical or sexual assault, rape, domestic violence, cyberbullying, discrimination... Every form of violence is serious and unacceptable."
+      },
+      "rights": {
+        "title": "Your rights",
+        "content": "You have the right to be protected, helped and supported. No one has the right to harm your physical or psychological integrity."
+      }
+    },
+    "stats": {
+      "title": "Figures that reveal the scale of the phenomenon",
+      "subtitle": "These statistics show the importance of raising awareness, taking action and supporting victims of gender-based and sexual violence."
+    },
+    "charts": {
+      "evolution": {
+        "title": "Evolution 2023 to 2025",
+        "subtitle": "Number of victims of sexual violence",
+        "totalVictims": "Total victims",
+        "minorVictims": "Minor victims"
+      },
+      "gender": {
+        "title": "Distribution by gender (2024)",
+        "subtitle": "7% increase compared to 2023",
+        "women": "Women",
+        "men": "Men"
+      },
+      "context": {
+        "title": "Context of violence against minors (2025)",
+        "subtitle": "Mainly outside the family setting",
+        "outOfFamily": "Outside family",
+        "family": "Family"
+      },
+      "children": {
+        "title": "Minor victims by age group (2023)",
+        "subtitle": "Distribution of child victims",
+        "count": "Number",
+        "ageGroups": ["0-5 years", "6-11 years", "12-17 years"]
+      },
+      "keyFigures": {
+        "title": "Key figures 2024-2025",
+        "subtitle": "Main data",
+        "victims2025": "victims in 2025 (+8%)",
+        "minors": "of victims are minors",
+        "women": "of victims are women",
+        "outOfFamily": "of violence occurs outside the family setting"
+      }
+    }
+  },
+  "training": {
+    "title": "E-learning training",
+    "subtitle": "Develop your knowledge of gender-based and sexual violence through our interactive training modules.",
+    "quizCta": "But first, test your knowledge with this quiz.",
+    "startQuiz": "Start the quiz",
+    "available": "Available training",
+    "modulesLabel": "Training modules:",
+    "startFormation": "Start training",
+    "languageNotice": "This training is only available in French.",
+    "modules": "modules",
+    "sources": {
+      "title": "Sources and resources.",
+      "initial": "For the initial training, we rely on:",
+      "advanced": "For the specialized training (workplace GBSV): we base ourselves on a training called \"Sexual harassment: The HR guide\"."
+    },
+    "courses": {
+      "course1": {
+        "title": "Recognizing gender-based and sexual violence",
+        "description": "Learn to identify the different forms of GBSV and their impacts",
+        "modules": [
+          { "title": "Module: Definitions",            "description": "Learn the different definitions to better understand what Gender-Based and Sexual Violence is." },
+          { "title": "Module: Key Figures",            "description": "Learn how many people are actually subject to sexual assault and/or sexual harassment." },
+          { "title": "Module: Consequences",           "description": "Identify the warning signs that victims of Gender-Based and Sexual Violence may show." },
+          { "title": "Module: Numbers and Associations", "description": "Learn and memorize all the emergency numbers useful for victims of sexual assault." },
+          { "title": "Module: What can we do?",        "description": "Learn how to act when you are a witness or close to a victim." }
+        ]
+      },
+      "course2": {
+        "title": "Prevention and awareness in schools and the professional world",
+        "description": "Tools and methods to educate about GBSV prevention",
+        "modules": [
+          { "title": "Module: What is GBSV at school and/or at work", "description": "Module that will help you recognize the different behaviors related to GBSV at school or at work." },
+          { "title": "Module: Workplace harassment... In reality?",   "description": "This module helps deconstruct misconceptions and understand what workplace harassment really is." },
+          { "title": "Module: How to react if you are a victim?",     "description": "In this module you will find everything you need to know if you are ever a victim of GBSV at work." },
+          { "title": "Module: How to react if you are a witness?",    "description": "This module gives you the keys to recognize a problematic situation and act as a witness." },
+          { "title": "Module: And the legal framework?",              "description": "Through an interactive quiz, this module helps better understand the legal framework of GBSV." }
+        ]
+      }
+    },
+    "levels": {
+      "Débutant": "Beginner",
+      "Avancé": "Advanced"
+    },
+    "categories": {
+      "Sensibilisation": "Awareness",
+      "Éducation": "Education"
+    }
+  },
+  "intervention": {
+    "title": "How to intervene safely",
+    "subtitle": "Learn safe intervention techniques, the steps to follow and secret codes to help victims of GBSV.",
+    "menu": {
+      "method3d": "3D Method",
+      "whatToDo": "What to do?",
+      "codes": "Secret codes"
+    },
+    "method3d": {
+      "title": "The 3D Method - How to intervene safely",
+      "intro": "These techniques aim to act without putting your own safety at risk:",
+      "delegate": { "label": "DELEGATE",  "description": "Alert a manager, contact security or emergency services" },
+      "distract": { "label": "DISTRACT",  "description": "Interrupt the scene with an innocent question or distraction" },
+      "dialogue": { "label": "DIALOGUE",  "description": "If the situation allows, speak directly to the aggressor or the victim" }
+    },
+    "whatToDo": {
+      "title": "What to do step by step?",
+      "steps": [
+        { "title": "Ensure immediate safety", "description": "If you sense a victim is in danger, intervene without putting yourself at risk or create a diversion (ask the time, approach as if you know them). Otherwise, call 17 or send an SMS to 114." },
+        { "title": "Support the victim", "description": "Stay with the victim, ask if they are okay and listen without judgment. Do not minimize what they have just experienced. Reassure them that they are not alone." },
+        { "title": "Do not confront the aggressor", "description": "You don't have to play the hero. Protect the victim and gather useful information (location, description, time) to alert the authorities." },
+        { "title": "Offer concrete help", "description": "Accompany the victim to file a complaint, see a doctor or call 3919 or 17. Offer to testify if you saw or heard what happened." },
+        { "title": "Report the facts", "description": "In transport: alert button, SNCF/RATP agents, 'STOP Harassment' app. At university/work: management or equality officer. Online: Pharos (internet-signalement.gouv.fr)." }
+      ]
+    },
+    "codes": {
+      "title": "Secret codes and discreet signals",
+      "angelShot": {
+        "title": "Angel Shot – What is it?",
+        "subtitle": "The \"Angel Shot\" is a discreet code used mainly in bars and nightclubs. It allows a person to signal to the staff that they are in danger or uncomfortable, without alerting the potential aggressor.",
+        "neat": { "label": "\"Angel shot neat\"",      "description": "Request to be walked to their car" },
+        "ice":  { "label": "\"Angel shot with ice\"",  "description": "Request to call a taxi or Uber" },
+        "lime": { "label": "\"Angel shot with lime\"", "description": "Request to call the police" }
+      },
+      "angela": {
+        "title": "Ask for \"Angela\"",
+        "description": "A system originally set up in the United Kingdom (\"Ask for Angela\") to protect against street harassment.",
+        "phrase": "💬 \"Is Angela here?\"",
+        "content": "If you feel in danger or are being harassed in the street, ask this question in a shop, restaurant or cultural venue (identifiable by a purple badge). This triggers a help procedure."
+      },
+      "apps": {
+        "title": "Emergency apps",
+        "content": "Some apps allow you to alert a trusted contact, call emergency services or share your location. On Android you can press the power button five times quickly to automatically trigger an emergency call. The Emergency app on iPhone allows you to quickly call emergency services and automatically share your vital medical information when needed."
+      },
+      "hand": {
+        "title": "The distress hand signal",
+        "content": "An internationally recognized gesture to discreetly alert others:",
+        "steps": ["Palm facing outward", "Fold the thumb into the palm", "Close the fingers over it"],
+        "usagesTitle": "⚠️ Uses",
+        "usages": ["Video calls", "Discreet alert", "Feeling threatened", "Domestic violence", "Attempted abduction"],
+        "saved": "This signal has already saved several victims!"
+      }
+    },
+    "cta": {
+      "title": "Acting safely saves lives",
+      "content": "Every intervention can make a difference. Do not hesitate to use these techniques and share this information around you."
+    }
+  },
+  "resources": {
+    "title": "Resources and help",
+    "subtitle": "Find here all the resources to help you or help someone who is a victim of gender-based and sexual violence.",
+    "menu": {
+      "emergency": "Emergency numbers",
+      "associations": "Associations",
+      "legal": "Legal framework"
+    },
+    "free": "Free",
+    "services": "Services offered:",
+    "sections": {
+      "emergency": "Emergency numbers",
+      "associations": "Victim support associations",
+      "legal": "Legal framework"
+    },
+    "legal": {
+      "definitions": "Legal definitions",
+      "penalties": "Penalties",
+      "harassment": {
+        "label": "Sexual harassment",
+        "definition": "Repeated conduct or behavior of a sexual nature that undermines dignity (art. 222-33 of the French Penal Code)",
+        "penalty": "2 years imprisonment and €30,000 fine (aggravated: 3 years and €45,000)"
+      },
+      "assault": {
+        "label": "Sexual assault",
+        "definition": "Sexual act committed with violence, coercion, threat or surprise (art. 222-22 of the French Penal Code)",
+        "penalty": "5 years imprisonment and €75,000 fine (aggravated: 7 years and €100,000)"
+      },
+      "rape": {
+        "label": "Rape",
+        "definition": "Act of sexual penetration committed with violence, coercion, threat or surprise (art. 222-23 of the French Penal Code)",
+        "penalty": "15 years criminal imprisonment (aggravated: 20 years)"
+      }
+    },
+    "emergencyNumbers": [
+      { "number": "999",           "name": "Police, Fire & Ambulance",          "description": "Main emergency number for immediate danger",                                                           "hours": "24/7" },
+      { "number": "111",           "name": "NHS Non-emergency Medical",          "description": "For urgent medical help or advice when it's not life-threatening",                                    "hours": "24/7" },
+      { "number": "0808 500 2222", "name": "Rape Crisis England & Wales",        "description": "Free rape and sexual abuse support line — also available via online chat",                            "hours": "24/7" },
+      { "number": "0808 2000 247", "name": "National Domestic Abuse Helpline",   "description": "Run by Refuge and Women's Aid — free, anonymous support for women experiencing domestic abuse",      "hours": "24/7" },
+      { "number": "116 123",       "name": "Samaritans",                         "description": "Free confidential support for people in distress or despair",                                        "hours": "24/7" },
+      { "number": "0808 800 5005", "name": "Male Survivors Partnership",         "description": "National helpline for male survivors of sexual violence",                                            "hours": "Mon-Fri 9am-8pm, Sat 10am-2pm" },
+      { "number": "0808 801 0327", "name": "Men's Advice Line",                  "description": "Confidential helpline for male victims of domestic abuse",                                          "hours": "Mon-Fri 9am-5pm" },
+      { "number": "0800 1111",     "name": "Childline",                          "description": "Free helpline for children and young people in danger or distress",                                  "hours": "24/7" }
+    ],
+    "associations": [
+      {
+        "name": "Fédération nationale solidarité femmes (FNSF)",
+        "description": "National network of associations specializing in supporting women victims of violence",
+        "website": "solidaritefemmes.org",
+        "services": ["Emergency housing", "Social support", "Legal aid"]
+      },
+      {
+        "name": "FN CIDFF",
+        "description": "National Federation of Information Centers on Women's and Family Rights",
+        "website": "fncidff.info",
+        "services": ["Legal information", "Support", "Access to rights"]
+      },
+      {
+        "name": "Collectif Féministe Contre le Viol (CFCV)",
+        "description": "Association fighting against sexual violence",
+        "phone": "0 800 05 95 95",
+        "website": "cfcv.asso.fr",
+        "services": ["Listening", "Legal support", "Support groups"]
+      },
+      {
+        "name": "SOS Hommes Battus",
+        "description": "Association helping men who are victims of domestic violence",
+        "website": "soshommesbattus.org",
+        "services": ["Phone support", "Support", "Information"]
+      },
+      {
+        "name": "AVFT",
+        "description": "European association against violence against women at work",
+        "website": "avft.org",
+        "services": ["Legal support", "Information", "Prevention"]
+      }
+    ],
+    "violentometre": {
+      "alt": "Violentometer",
+      "altZoom": "Violentometer zoom"
+    }
+  },
+  "posters": {
+    "title": "Awareness posters",
+    "subtitle": "Download our awareness posters for free\nto spread VSS prevention messages.",
+    "search": "Search for a poster...",
+    "download": "Download",
+    "downloadAll": "Download the complete pack",
+    "previewTitle": "Poster preview",
+    "noResults": "No poster found for your search.",
+    "available": "Posters available",
+    "categoriesCount": "Categories",
+    "format": "Format",
+    "linkCopied": "Link copied to clipboard!",
+    "violentometre": {
+      "title": "Violentometer",
+      "subtitle": "Tool to measure whether your relationship is healthy or dangerous",
+      "launch": "Start the quiz",
+      "close": "Close the quiz",
+      "call": "3919 - Violence Info"
+    },
+    "cta": {
+      "title": "Spread the prevention messages",
+      "content": "Print and distribute these posters in your premises, schools, associations or public spaces to raise awareness about gender-based and sexual violence."
+    },
+    "categories": [
+      { "value": "all",             "label": "All categories" },
+      { "value": "Sensibilisation", "label": "Awareness"      },
+      { "value": "Information",     "label": "Information"    }
+    ],
+    "items": [
+      { "title": "Erinyes - GBSV Statistics",  "description": "General and informative poster about Gender-Based and Sexual Violence.",                                                                  "category": "Sensibilisation", "format": "A3", "size": "510 Ko" },
+      { "title": "Consent",                    "description": "If you don't know what consent means or are unsure, this poster is here to help you.",                                                   "category": "Sensibilisation", "format": "A3", "size": "623 Ko" },
+      { "title": "What should I do?",          "description": "Here are the four steps to follow if you witness Gender-Based and Sexual Violence.",                                                      "category": "Sensibilisation", "format": "A3", "size": "787 Ko" },
+      { "title": "Angel Shot",                 "description": "Here is a code you can use during a night out at a bar. All bars in France know this device.",                                           "category": "Information",     "format": "A3", "size": "1.6 Mo" },
+      { "title": "Emergency numbers",          "description": "The numbers to contact if you ever feel in danger.",                                                                                      "category": "Information",     "format": "A3", "size": "412 Ko" },
+      { "title": "Associations",               "description": "Here are some associations that can help you in your process depending on what you are looking for.",                                     "category": "Information",     "format": "A4", "size": "3.7 MB" }
+    ]
+  },
+  "violentometre": {
+    "zones": {
+      "green":  { "label": "ENJOY",                          "description": "Your relationship is healthy when he..."  },
+      "yellow": { "label": "WARNING, SAY STOP!",             "description": "There is violence when he..."              },
+      "red":    { "label": "PROTECT YOURSELF, GET HELP",     "description": "You are in danger when he..."             }
+    },
+    "phrasesLabel": "Phrases to place:",
+    "verify": "Check",
+    "success": "Congratulations! You successfully placed all items in the right place! You can download the Violentometer as a PDF if you wish.",
+    "downloadBtn": "Download the Violentometer",
+    "items": {
+      "green": [
+        "Respects your decisions and tastes",
+        "Accepts your friends and family",
+        "Trusts you",
+        "Is happy when you feel fulfilled",
+        "Makes sure you agree on what you do together"
+      ],
+      "yellow": [
+        "Blackmails you if you refuse to do something",
+        "Puts down your opinions and projects",
+        "Mocks you in public",
+        "Is constantly jealous and possessive",
+        "Manipulates you",
+        "Controls your outings, clothes, makeup",
+        "Goes through your texts, emails, apps",
+        "Insists you send them intimate photos",
+        "Isolates you from your family and friends",
+        "Forces you to watch pornographic films"
+      ],
+      "red": [
+        "Humiliates you and calls you crazy when you reproach them",
+        "\"Loses their temper\" when something displeases them",
+        "Threatens to commit suicide because of you",
+        "Threatens to share intimate photos of you",
+        "Pushes, pulls, slaps, shakes or hits you",
+        "Touches your intimate parts without your consent",
+        "Forces you to have sexual relations",
+        "Threatens you with a weapon"
+      ]
+    }
+  },
+  "cookies": {
+    "text": "This site uses cookies (via third-party services such as videos) to improve your experience.",
+    "accept": "Accept",
+    "refuse": "Decline"
+  },
+  "footer": {
+    "about": "An awareness and support website to fight against gender-based and sexual violence.",
+    "quote": "\"Let's stop normalizing domination and sexualization, and instead normalize the consent of others.\"",
+    "nav": "Navigation",
+    "emergency": "Emergencies",
+    "resources": "Useful resources",
+    "copyright": "All rights reserved.",
+    "legal": "Legal notice",
+    "warning": "If you are in immediate danger, call 17 (police/gendarmerie) or 112 (European emergency services). This site does not replace professional help.",
+    "quickLinks": [
+      { "name": "Home",         "to": "/"             },
+      { "name": "Training",     "to": "/formations"   },
+      { "name": "Intervention", "to": "/interventions"},
+      { "name": "Resources",    "to": "/ressources"   },
+      { "name": "Media",        "to": "/affiches"     }
+    ],
+    "emergencyNumbers": [
+      { "name": "999 - Police, Fire & Ambulance",        "number": "999"           },
+      { "name": "0808 500 2222 - Rape Crisis",            "number": "0808 500 2222" },
+      { "name": "0808 2000 247 - Domestic Abuse Helpline","number": "0808 2000 247" },
+      { "name": "116 123 - Samaritans",                  "number": "116 123"       },
+      { "name": "111 - NHS Non-emergency",               "number": "111"           }
+    ],
+    "resourceLinks": [
+      { "name": "FNSF - Solidarité Femmes",          "href": "https://solidaritefemmes.org/" },
+      { "name": "FN CIDFF",                           "href": "https://fncidff.info/"         },
+      { "name": "Collectif Féministe Contre le Viol", "href": "https://cfcv.asso.fr/"         },
+      { "name": "SOS Hommes Battus",                  "href": "https://soshommesbattus.org/"  }
+    ],
+    "brandName": "Erinyes",
+    "important": "Important:"
+  },
+  "nav": {
+    "logoAlt": "Erinyes Logo",
+    "brandName": "Erinyes",
+    "whoAreWe": "Who are we?",
+    "about": {
+      "p1": "Erinyes is a awareness website dedicated to fighting against gender-based and sexual violence (GBSV). Our mission is to break the silence, inform and support victims towards appropriate help resources.",
+      "p2": "In Greek mythology, the Erinyes were the goddesses of vengeance who pursued criminals and ensured justice was served. Today, we carry this symbolic name to defend victims and fight against impunity.",
+      "quote": "\"Let's stop normalizing domination and sexualization, and instead normalize the consent of others. Listen, understand and respect the desires and needs of each person. When it's no, it's NO!\"",
+      "p3": "Our platform offers updated statistics, help resources, awareness training and prevention tools to contribute to a world free from gender-based and sexual violence."
+    },
+    "links": [
+      { "id": "accueil",      "label": "Home",         "to": "/"             },
+      { "id": "formations",   "label": "Training",     "to": "/formations"   },
+      { "id": "intervention", "label": "Intervention", "to": "/interventions"},
+      { "id": "ressources",   "label": "Resources",    "to": "/ressources"   },
+      { "id": "medias",       "label": "Media",        "to": "/affiches"     }
+    ]
+  },
+  "quickExit": {
+    "label": "Quick exit",
+    "ariaLabel": "Quick exit",
+    "tooltip": "⚠️ Warning, quick exit button: you will be redirected to Google, remember to delete your history if necessary!",
+    "redirectUrl": "https://www.google.com"
+  },
+  "legal": {
+    "title": "Legal Notice",
+
+    "editor": {
+      "title": "Website Publisher",
+      "name": "Camille Lacroix, Web Developer and Project Lead of Erinyes",
+      "contact": "Contact"
+    },
+
+    "hosting": {
+      "title": "Hosting Provider",
+      "company": "Netlify, Inc.",
+      "address1": "44 Montgomery Street, Suite 300",
+      "address2": "San Francisco, CA 94104",
+      "country": "United States",
+      "website": "Website"
+    },
+
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "paragraph1": "The content available on the Erinyes website (texts, training materials, videos, resources, and structure) is protected by intellectual property laws.",
+      "paragraph2": "Any reproduction, distribution, or use without prior authorization is prohibited."
+    },
+
+    "personalData": {
+      "title": "Personal Data",
+      "paragraph1": "This website does not directly collect personal data.",
+      "paragraph2": "However, some embedded content (including YouTube videos) may collect data through cookies or tracking technologies.",
+      "paragraph3": "Such processing is the responsibility of the relevant third-party services."
+    },
+
+    "cookies": {
+      "title": "Cookies",
+      "paragraph1": "This website may use cookies through third-party services to ensure the proper functioning of embedded content.",
+      "paragraph2": "You can configure your browser to refuse cookies."
+    },
+
+    "liability": {
+      "title": "Liability",
+      "paragraph1": "The Erinyes website provides informational and awareness-raising content.",
+      "paragraph2": "The information provided does not replace professional advice.",
+      "paragraph3": "The website may contain links to external resources (associations, helplines, etc.). The publisher cannot be held responsible for the content of these external resources."
+    },
+
+    "contact": {
+      "title": "Contact"
+    }
+  }
+}
