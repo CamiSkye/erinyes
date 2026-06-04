@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../shared/ui/card";
 import { Button } from "../../shared/ui/button";
 import { Phone, ExternalLink, MapPin, Clock, Users } from "lucide-react";
@@ -7,10 +8,6 @@ import violentometre from "../../assets/Violentometre.webp";
 import { useResources } from "./hooks/useResources";
 import { menuItems } from "./data/resources.data";
 import type { EmergencyNumber, Association } from "./types/resources.types";
-
-// ===========================
-// ResourcesPage
-// ===========================
 
 export function ResourcesPage() {
   const { zoom, openZoom, closeZoom, scrollToSection } = useResources();
@@ -33,15 +30,22 @@ export function ResourcesPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F1EA] py-8">
-      <div className="max-w-6xl mx-auto px-4">
 
-        {/* Header */}
+      <Helmet>
+        <title>Ressources VSS — Numéros d'urgence et associations — Erinyes</title>
+        <meta name="description" content="Numéros d'urgence, associations d'aide aux victimes de VSS, cadre légal et violentomètre. Toutes les ressources pour agir." />
+        <meta property="og:title" content="Ressources VSS — Numéros d'urgence et associations — Erinyes" />
+        <meta property="og:description" content="Numéros d'urgence, associations, cadre légal : toutes les ressources pour les victimes de violences sexistes et sexuelles." />
+        <meta property="og:url" content="https://erinyes.fr/ressources" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#8B5E3C] mb-4">{t("resources.title")}</h1>
           <p className="text-xl text-[#6B6B6B] max-w-3xl mx-auto">{t("resources.subtitle")}</p>
         </div>
 
-        {/* Menu de navigation */}
         <div className="bg-white/95 rounded-lg p-4 mb-8 border border-[#E5E1DA]">
           <div className="flex flex-wrap gap-2 justify-center">
             {menuItems.map((item) => {
@@ -62,7 +66,6 @@ export function ResourcesPage() {
           </div>
         </div>
 
-        {/* Numéros d'urgence */}
         <section id="urgence" className="mb-12">
           <h2 className="text-3xl font-bold text-[#8B5E3C] mb-6 flex items-center">
             <Phone className="mr-3 h-6 w-6" />
@@ -92,7 +95,6 @@ export function ResourcesPage() {
           </div>
         </section>
 
-        {/* Associations */}
         <section id="associations" className="mb-12">
           <h2 className="text-3xl font-bold text-[#8B5E3C] mb-6 flex items-center">
             <Users className="mr-3 h-6 w-6" />
@@ -116,12 +118,7 @@ export function ResourcesPage() {
                     {assoc.website && (
                       <div className="flex items-center text-sm">
                         <ExternalLink className="mr-2 h-4 w-4 text-[#9B7FD7]" />
-                        <a
-                          href={`https://${assoc.website}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#8B5E3C] hover:text-[#9B7FD7] underline"
-                        >
+                        <a href={`https://${assoc.website}`} target="_blank" rel="noopener noreferrer" className="text-[#8B5E3C] hover:text-[#9B7FD7] underline">
                           {assoc.website}
                         </a>
                       </div>
@@ -130,9 +127,7 @@ export function ResourcesPage() {
                       <p className="text-sm font-medium text-[#8B5E3C] mb-2">{t("resources.services")}</p>
                       <div className="flex flex-wrap gap-2">
                         {assoc.services.map((service, idx) => (
-                          <span key={idx} className="bg-[#9B7FD7] text-white text-sm px-3 py-2 rounded font-medium">
-                            {service}
-                          </span>
+                          <span key={idx} className="bg-[#9B7FD7] text-white text-sm px-3 py-2 rounded font-medium">{service}</span>
                         ))}
                       </div>
                     </div>
@@ -143,15 +138,12 @@ export function ResourcesPage() {
           </div>
         </section>
 
-        {/* Cadre légal */}
         <section id="cadre-legal" className="mb-12">
           <h2 className="text-3xl font-bold text-[#8B5E3C] mb-6 flex items-center">
             <MapPin className="mr-3 h-6 w-6" />
             {t("resources.sections.legal")}
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-            {/* Définitions */}
             <Card className="bg-white/95 border-[#E5E1DA]">
               <CardHeader>
                 <CardTitle className="text-[#8B5E3C] underline">{t("resources.legal.definitions")}</CardTitle>
@@ -166,7 +158,6 @@ export function ResourcesPage() {
               </CardContent>
             </Card>
 
-            {/* Peines */}
             <Card className="bg-white/95 border-[#E5E1DA]">
               <CardHeader>
                 <CardTitle className="text-[#8B5E3C] underline">{t("resources.legal.penalties")}</CardTitle>
@@ -180,11 +171,9 @@ export function ResourcesPage() {
                 ))}
               </CardContent>
             </Card>
-
           </div>
         </section>
 
-        {/* Violentomètre */}
         <section className="rounded-lg">
           <img
             src={violentometre}
@@ -194,15 +183,9 @@ export function ResourcesPage() {
           />
         </section>
 
-        {/* Zoom Violentomètre */}
         {zoom && (
           <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
-            <button
-              onClick={closeZoom}
-              className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 transition-colors z-10"
-            >
-              ✕
-            </button>
+            <button onClick={closeZoom} className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 transition-colors z-10">✕</button>
             <img
               src={violentometre}
               alt={t("resources.violentometre.altZoom")}
@@ -211,7 +194,6 @@ export function ResourcesPage() {
             />
           </div>
         )}
-
       </div>
     </div>
   );

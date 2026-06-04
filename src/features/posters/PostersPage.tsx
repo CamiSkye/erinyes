@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "../../shared/ui/card";
 import { Button } from "../../shared/ui/button";
 import { Badge } from "../../shared/ui/badge";
@@ -10,10 +11,6 @@ import ViolentometreQuiz from '../quiz/ViolentometreQuiz';
 
 import { usePosters, type PosterItem } from "./hooks/usePosters";
 import { posterPreviews, getCategoryColor } from "./data/posters.data";
-
-// ===========================
-// PostersPage
-// ===========================
 
 export function PostersPage() {
   const { t } = useTranslation();
@@ -38,15 +35,22 @@ export function PostersPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F1EA] py-8">
-      <div className="max-w-7xl mx-auto px-4">
 
-        {/* Header */}
+      <Helmet>
+        <title>Affiches de sensibilisation VSS — Erinyes</title>
+        <meta name="description" content="Téléchargez gratuitement nos affiches de sensibilisation contre les violences sexistes et sexuelles. À afficher partout pour sensibiliser." />
+        <meta property="og:title" content="Affiches de sensibilisation VSS — Erinyes" />
+        <meta property="og:description" content="Téléchargez gratuitement nos affiches de sensibilisation contre les VSS." />
+        <meta property="og:url" content="https://erinyes.fr/affiches" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#8B5E3C] mb-4">{t("posters.title")}</h1>
           <p className="text-xl text-[#6B6B6B] max-w-3xl mx-auto">{t("posters.subtitle")}</p>
         </div>
 
-        {/* Filtres */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 p-6 bg-white/95 rounded-lg border border-[#E5E1DA]">
           <div className="flex-1">
             <div className="relative">
@@ -66,15 +70,12 @@ export function PostersPage() {
             </SelectTrigger>
             <SelectContent>
               {categories.map(category => (
-                <SelectItem key={category.value} value={category.value}>
-                  {category.label}
-                </SelectItem>
+                <SelectItem key={category.value} value={category.value}>{category.label}</SelectItem>
               ))}
             </SelectContent>
           </Select>
         </div>
 
-        {/* Stats rapides */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
           <Card className="bg-white/95 border-[#E5E1DA] text-center p-4">
             <div className="text-2xl font-bold text-[#9B7FD7]">{allPosters.length}</div>
@@ -86,16 +87,9 @@ export function PostersPage() {
           </Card>
         </div>
 
-        {/* Contenu principal + sidebar */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-
-          {/* Grille des affiches */}
           <div className="lg:col-span-3">
-            <div className={`grid gap-6 ${
-              viewMode === 'grid'
-                ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2'
-                : 'grid-cols-1'
-            }`}>
+            <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2' : 'grid-cols-1'}`}>
               {filtered.map((poster, index) => {
                 const preview = posterPreviews[allPosters.indexOf(poster)];
                 return (
@@ -162,7 +156,6 @@ export function PostersPage() {
                 );
               })}
             </div>
-
             {filtered.length === 0 && (
               <div className="text-center py-12">
                 <p className="text-[#6B6B6B] text-lg">{t("posters.noResults")}</p>
@@ -170,7 +163,6 @@ export function PostersPage() {
             )}
           </div>
 
-          {/* Sidebar Violentomètre */}
           <div className="lg:col-span-1 space-y-4 sticky top-24">
             <Card className="overflow-hidden border-none shadow-lg">
               <CardHeader className="text-center bg-white p-4">
@@ -186,7 +178,6 @@ export function PostersPage() {
                 </Button>
               </CardContent>
             </Card>
-
             {showQuiz && (
               <Card className="overflow-hidden border-none shadow-lg mt-4">
                 <CardContent className="p-4">
@@ -197,7 +188,6 @@ export function PostersPage() {
           </div>
         </div>
 
-        {/* Call to action */}
         <section className="mt-16 text-center bg-[#9B7FD7] bg-opacity-5 rounded-lg p-8">
           <h2 className="text-2xl font-bold text-white mb-4">{t("posters.cta.title")}</h2>
           <p className="text-white mb-6 max-w-2xl mx-auto">{t("posters.cta.content")}</p>
@@ -207,7 +197,6 @@ export function PostersPage() {
           </Button>
         </section>
 
-        {/* Modal prévisualisation */}
         {previewImage && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto">
@@ -221,7 +210,6 @@ export function PostersPage() {
             </div>
           </div>
         )}
-
       </div>
     </div>
   );

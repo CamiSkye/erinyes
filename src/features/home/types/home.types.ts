@@ -1,7 +1,3 @@
-// ===========================
-// TYPES — HomePage
-// ===========================
-
 export interface EvolutionDataPoint {
   year: string;
   victimes: number;

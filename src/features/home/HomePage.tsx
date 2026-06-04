@@ -1,19 +1,27 @@
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "../../shared/ui/card";
 import { StatisticsChart } from "./components/StatisticsChart";
 import { infoCards } from "./data/home.data";
 
 export function HomePage() {
   const { t } = useTranslation();
-
   const infoCardKeys = [
     { titleKey: "home.about.whatAre.title", contentKey: "home.about.whatAre.content" },
     { titleKey: "home.about.types.title",   contentKey: "home.about.types.content"   },
     { titleKey: "home.about.rights.title",  contentKey: "home.about.rights.content"  },
   ];
-
   return (
     <div className="min-h-screen bg-[#F5F1EA]">
+
+      <Helmet>
+        <title>Erinyes — Sensibilisation contre les VSS</title>
+        <meta name="description" content="Comprendre, reconnaître et agir contre les violences sexistes et sexuelles. Ressources, formations et quiz pour se sensibiliser." />
+        <meta property="og:title" content="Erinyes — Sensibilisation contre les VSS" />
+        <meta property="og:description" content="Comprendre, reconnaître et agir contre les violences sexistes et sexuelles." />
+        <meta property="og:url" content="https://erinyes.fr" />
+        <meta property="og:type" content="website" />
+      </Helmet>
 
       {/* Hero */}
       <section className="py-16 px-4">

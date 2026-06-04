@@ -388,7 +388,7 @@
     "tooltip": "⚠️ Attention, bouton de sortie rapide du site : vous serez redirigé vers Google, pensez à supprimer votre historique si nécessaire !",
     "redirectUrl": "https://www.google.com"
     },
-     "legal": {
+    "legal": {
     "title": "Mentions légales",
 
     "editor": {

@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "../../shared/ui/card";
 import { Button } from "../../shared/ui/button";
 import { Shield } from "lucide-react";
@@ -13,10 +14,6 @@ import {
   URGENT_STEP_INDEX,
   urgencyApps,
 } from "./data/intervention.data";
-
-// ===========================
-// InterventionPage
-// ===========================
 
 export function InterventionPage() {
   const { scrollToSection } = useIntervention();
@@ -36,15 +33,22 @@ export function InterventionPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F1EA] py-8">
-      <div className="max-w-6xl mx-auto px-4">
 
-        {/* Header */}
+      <Helmet>
+        <title>Comment intervenir face aux VSS — Erinyes</title>
+        <meta name="description" content="Apprenez à intervenir face aux violences sexistes et sexuelles : méthode des 3D, codes secrets Angel Shot, signe de détresse de la main." />
+        <meta property="og:title" content="Comment intervenir face aux VSS — Erinyes" />
+        <meta property="og:description" content="Méthode des 3D, Angel Shot, codes secrets : toutes les techniques pour agir face aux VSS." />
+        <meta property="og:url" content="https://erinyes.fr/intervention" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
+      <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#8B5E3C] mb-4">{t("intervention.title")}</h1>
           <p className="text-xl text-[#6B6B6B] max-w-3xl mx-auto">{t("intervention.subtitle")}</p>
         </div>
 
-        {/* Menu de navigation */}
         <div className="bg-white/95 rounded-lg p-4 mb-8 border border-[#E5E1DA]">
           <div className="flex flex-wrap gap-2 justify-center">
             {menuItems.map((item) => {
@@ -65,7 +69,6 @@ export function InterventionPage() {
           </div>
         </div>
 
-        {/* Méthode des 3D */}
         <section id="methode-3d" className="mb-12">
           <h2 className="text-2xl font-bold text-[#8B5E3C] mb-6">{t("intervention.method3d.title")}</h2>
           <div className="bg-white/95 rounded-lg p-6 border border-[#E5E1DA] mb-6">
@@ -81,7 +84,6 @@ export function InterventionPage() {
           </div>
         </section>
 
-        {/* Que faire étape par étape */}
         <section id="que-faire" className="mb-12">
           <h2 className="text-2xl font-bold text-[#8B5E3C] mb-6">{t("intervention.whatToDo.title")}</h2>
           <div className="bg-white/95 rounded-lg p-6 border border-[#E5E1DA]">
@@ -103,14 +105,12 @@ export function InterventionPage() {
           </div>
         </section>
 
-        {/* Codes secrets */}
         <section id="codes-secrets" className="mb-12">
           <h2 className="text-2xl font-bold text-[#8B5E3C] mb-6 flex items-center">
             <Shield className="mr-3 h-6 w-6" />
             {t("intervention.codes.title")}
           </h2>
 
-          {/* Angel Shot */}
           <div className="bg-white/95 rounded-lg p-6 border border-[#E5E1DA] mb-6">
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-[#8B5E3C] mb-2">{t("intervention.codes.angelShot.title")}</h3>
@@ -128,8 +128,6 @@ export function InterventionPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-            {/* Angela */}
             <Card className="bg-white/95 border-[#E5E1DA] hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-[#8B5E3C]">{t("intervention.codes.angela.title")}</CardTitle>
@@ -144,7 +142,6 @@ export function InterventionPage() {
               </CardContent>
             </Card>
 
-            {/* Applications */}
             <Card className="bg-white/95 border-[#E5E1DA] hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-[#8B5E3C]">{t("intervention.codes.apps.title")}</CardTitle>
@@ -159,7 +156,6 @@ export function InterventionPage() {
               </CardContent>
             </Card>
 
-            {/* Signe de la main */}
             <Card className="bg-white/95 border-[#E5E1DA] hover:shadow-lg transition-shadow lg:col-span-2">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-[#8B5E3C]">{t("intervention.codes.hand.title")}</CardTitle>
@@ -184,16 +180,13 @@ export function InterventionPage() {
                 </div>
               </CardContent>
             </Card>
-
           </div>
         </section>
 
-        {/* Call to action */}
         <section className="text-center bg-[#9B7FD7] bg-opacity-5 rounded-lg p-8">
           <h2 className="text-2xl font-bold text-white mb-4">{t("intervention.cta.title")}</h2>
           <p className="text-white mb-6 max-w-2xl mx-auto">{t("intervention.cta.content")}</p>
         </section>
-
       </div>
     </div>
   );
